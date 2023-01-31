@@ -1,0 +1,44 @@
+.hero {
+  min-height: 90vh;
+  min-width: 100vw;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 20px 0px;
+  }
+  p {
+    font-size: 1.1rem;
+    margin: 10px 0px;
+  }
+  .hero-btns {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+
+    button {
+      cursor: pointer;
+      padding: 20px 30px;
+      margin: 20px;
+      border-radius: 10px;
+      font-size: 1.2rem;
+      background: none;
+    }
+    button.create-dao-btn {
+      background-color: #1976d2;
+      color: #fff;
+      border: 1px solid #1976d2;
+    }
+    button.existing-dao-btn {
+      background-color: white;
+      color: #1976d2;
+      border: 1px solid #1976d2;
+    }
+  }
+}
