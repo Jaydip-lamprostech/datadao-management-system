@@ -15,7 +15,10 @@ import CreateDao from "./components/stepsform/CreateDao";
 function App() {
   const { chains, provider } = configureChains(
     [mainnet, polygonMumbai, goerli],
-    [alchemyProvider({ apiKey: process.env.ALCHEMY_ID }), publicProvider()]
+    [
+      alchemyProvider({ apiKey: "O5NYvtwLMNG0LjAXPQEk0YJT2l3UxTAY" }),
+      publicProvider(),
+    ]
   );
   const { connectors } = getDefaultWallets({
     appName: "My RainbowKit App",

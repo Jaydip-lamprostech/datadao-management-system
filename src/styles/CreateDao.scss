@@ -1,12 +1,191 @@
 .create-dao-main {
   width: 100vw;
   min-width: 90vh;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
 
   .left-div {
     border: 1px solid black;
     width: 30%;
-    height: 90vh;
-    max-height: 90vh;
-    padding: 20px 10px;
+    min-height: 90vh;
+    // max-height: 90vh;
+    padding: 20px 30px;
+    background: #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .right-div {
+    // border: 1px solid black;
+    width: 70%;
+    min-height: 90vh;
+    text-align: center;
+    padding: 40px 30px;
+    background-color: #e0e0e0;
+
+    .create-dao-info-main {
+      border-radius: 50px;
+      background: #e0e0e0;
+      box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+      width: 100%;
+      max-width: 800px;
+      min-height: 500px;
+      padding: 30px 0px;
+      // border: 1px solid black;
+      // border-radius: 10px;
+      margin: 40px auto;
+
+      h1 {
+        color: #1976d2;
+        // padding: 40px 0px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+      }
+      .create-dao-info-input-parent {
+        width: 80%;
+        margin: 0px auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 30px 0px;
+
+        .create-dao-info-input-child {
+          width: 70%;
+          input {
+            margin: 30px 0px;
+            padding: 20px;
+            width: 100%;
+            font-size: 1.1rem;
+            background: #e0e0e0;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+          }
+          textarea {
+            margin: 30px 0px;
+            font-size: 1.1rem;
+            width: 100%;
+            padding: 20px;
+            resize: none;
+            background: #e0e0e0;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+          }
+        }
+      }
+      .create-dao-voting-inside {
+        width: 80%;
+        margin: 0px auto;
+        padding: 10px 0px;
+        h3.voting-slider-title {
+          margin: 15px 0px;
+          text-align: left;
+          width: 100%;
+        }
+        .slider-parent {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          // width: 80%;
+          background: #e0e0e0;
+          padding: 10px 30px;
+          box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+          border-radius: 10px;
+        }
+        span.display-vote {
+          border: 1px solid #1976d2;
+          padding: 10px 40px;
+          border-radius: 10px;
+          background-color: #1976d2;
+          color: #ffffff;
+        }
+        input.display-vote-period {
+          border: 1px solid #1976d2;
+          padding: 10px;
+          background-color: #e0e0e0;
+          border-radius: 10px;
+          width: 30%;
+          font-size: 1.1rem;
+          // margin: 0px 10px;
+        }
+      }
+
+      .create-dao-token-config-parent {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 80%;
+        margin: 20px auto;
+        h3 {
+          text-align: left;
+          margin: 15px 0px;
+          position: inherit;
+          z-index: 5;
+        }
+        input {
+          padding: 10px;
+          margin-right: 20px;
+          background-color: #e0e0e0;
+          box-shadow: none;
+          font-size: 1.1rem;
+          border: 1px solid #1976d2;
+          box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+          border-radius: 10px;
+        }
+        .token-config-child-1 {
+          display: flex;
+          flex-direction: column;
+          width: 70%;
+          margin: 20px 0px;
+        }
+        .token-config-child-2 {
+          display: flex;
+          flex-direction: column;
+          width: 30%;
+          margin: 20px 0px;
+        }
+      }
+      .review-main {
+        width: 80%;
+        margin: 20px auto;
+        // padding: 0px 30px;
+        .css-qzmcqv-MuiPaper-root-MuiAccordion-root:last-of-type {
+          border-bottom-left-radius: 10px;
+          border-bottom-right-radius: 10px;
+        }
+      }
+      .create-dao-back-next-parent {
+        display: flex;
+        justify-content: space-between;
+        width: 80%;
+        margin: 20px auto;
+        padding: 0px 30px;
+
+        button {
+          padding: 10px 40px;
+          font-size: 1.1rem;
+          border-radius: 10px;
+          cursor: pointer;
+        }
+        button:disabled {
+          opacity: 0.5;
+          cursor: not-allowed;
+        }
+        button.create-dao-back {
+          background-color: #e0e0e0;
+          border: 1px solid #1976d2;
+          color: #1976d2;
+        }
+        button.create-dao-next {
+          background-color: #1976d2;
+          border: 1px solid #1976d2;
+          color: #ffffff;
+        }
+      }
+    }
   }
 }
