@@ -8,6 +8,9 @@ function LandingPage() {
   const openCreateDaoPage = () => {
     navigate("/create-data-dao/select-template");
   };
+  const openExistingDaoPage = () => {
+    navigate("/open-existing-data-dao");
+  };
   return (
     <>
       <section className="hero">
@@ -21,7 +24,12 @@ function LandingPage() {
           >
             Create DataDao
           </button>
-          <button className="existing-dao-btn">Open Existing DataDao</button>
+          <button
+            className="existing-dao-btn"
+            onClick={() => openExistingDaoPage()}
+          >
+            Open Existing DataDao
+          </button>
         </div>
       </section>
     </>

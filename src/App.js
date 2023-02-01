@@ -11,6 +11,8 @@ import Navbar from "./components/Navbar";
 import SelectTemplate from "./components/SelectTemplate";
 import TemplateDetails from "./components/TemplateDetails";
 import CreateDao from "./components/stepsform/CreateDao";
+import Dashboard from "./pages/Dashboard";
+import ExistingDaos from "./pages/ExistingDaos";
 
 function App() {
   const { chains, provider } = configureChains(
@@ -46,6 +48,14 @@ function App() {
                 element={<TemplateDetails />}
               />
               <Route path="/create-data-dao" element={<CreateDao />} />
+              <Route
+                path="/open-existing-data-dao"
+                element={<ExistingDaos />}
+              />
+              <Route
+                path="/open-existing-data-dao/:id"
+                element={<Dashboard />}
+              />
             </Routes>
           </Router>
         </div>
