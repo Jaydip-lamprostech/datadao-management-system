@@ -1,0 +1,24 @@
+.all-datadao-main-div {
+  width: 100%;
+}
+.all-datadao-div {
+  margin: 0 auto;
+}
+.all-datadao-title {
+  text-align: center;
+}
+.all-datadao-section1 {
+  margin-bottom: 50px;
+}
+.datadao-address {
+  background-color: aqua;
+  width: 150px;
+  padding: 10px;
+}
+.all-datadao-section2 {
+  width: 60%;
+  margin: 0 auto;
+}
+.dataDAo-details {
+  width: 20%;
+}

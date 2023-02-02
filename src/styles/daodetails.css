@@ -1,0 +1,32 @@
+.datadao-details-main-div {
+  width: 100%;
+}
+.datadao-details-div {
+  width: 50%;
+  margin: 0 auto;
+}
+.datadao-details-section1 {
+  border-bottom: 1px solid black;
+  padding: 20px;
+}
+.dataset-main-flex {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.datadao-rightbar-flex {
+  width: 40%;
+}
+.datadao-leftbar-flex {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.datadao-details-btn {
+  width: 100%;
+}
+.datadao-details-section2 {
+  /* border-bottom: 1px solid black; */
+  padding: 20px;
+}

@@ -10,12 +10,17 @@ import img from "../assets/section3.jpg";
 // import TemplateDetails from "./TemplateDetails";
 import { useNavigate } from "react-router-dom";
 import "../styles/Dashboard.scss";
+import Tokens from "../components/Tokens";
+import AvailabelProposal from "../components/AvailabelProposal";
+import AllDataDaos from "../components/AllDataDaos";
+import DataDaoDetails from "../components/DataDaoDetails";
 
 function Dashboard() {
   const [dashboard, setDashboard] = useState(true);
   const [proposals, setProposals] = useState(false);
   const [tokens, setTokens] = useState(false);
   const [datadaos, setDatadaos] = useState(false);
+  const [singleDataDao, setSingleDataDao] = useState(false);
 
   const navigate = useNavigate();
 
@@ -215,6 +220,20 @@ function Dashboard() {
               </div>
             </div>
           </>
+        ) : tokens ? (
+          <Tokens />
+        ) : proposals ? (
+          <AvailabelProposal />
+        ) : datadaos ? (
+          <AllDataDaos
+            setSingleDataDao={setSingleDataDao}
+            setDatadaos={setDatadaos}
+          />
+        ) : singleDataDao ? (
+          <DataDaoDetails
+            setDatadaos={setDatadaos}
+            setSingleDataDao={setSingleDataDao}
+          />
         ) : null}
       </div>
     </div>
