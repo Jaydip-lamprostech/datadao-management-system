@@ -88,7 +88,7 @@ function Tokens() {
                 className="add-token"
                 onClick={handleOpen}
               >
-                Add Token
+                Add Member
               </Button>
             </div>
 
@@ -148,31 +148,37 @@ function Tokens() {
         >
           <Box sx={style}>
             <div className="add-token-leftbar-token-main">
-              <div className="add-token-cancel">
-                <h2 className="addtoken-title">Add Token</h2>
+              <div className="addtoken-label">
+                <div className="addtoken-label1">
+                  <label>Recipient Address</label>{" "}
+                </div>
+                <div className="add-member-popup">
+                  <TextField id="demo-helper-text-misaligned-no-helper" />
+                </div>
+                <div className="addtoken-label1">
+                  <label>Add Number Of Members</label>
+                </div>
+                <TextField id="demo-helper-text-misaligned-no-helper" />{" "}
+              </div>
+              <div className="addtoken-btn">
                 <Button
-                  variant="text"
+                  variant="contained"
+                  size="large"
+                  className="addtoken"
+                  id="add-member-btn"
+                >
+                  Add Member
+                </Button>
+                <Button
+                  variant="contained"
+                  size="large"
+                  className="addtoken"
+                  id="add-member-btn"
                   onClick={() => {
                     setAddToken(false);
                   }}
                 >
                   Cancel
-                </Button>
-              </div>
-
-              <div className="addtoken-label">
-                <div className="addtoken-label1">
-                  <label>Recipient Address</label>{" "}
-                </div>
-                <TextField id="demo-helper-text-misaligned-no-helper" />{" "}
-                <div className="addtoken-label1">
-                  <label>Add Number Of Tokens</label>
-                </div>
-                <TextField id="demo-helper-text-misaligned-no-helper" />{" "}
-              </div>
-              <div className="addtoken-btn">
-                <Button variant="contained" size="large" className="addtoken">
-                  Add Token
                 </Button>
               </div>
             </div>

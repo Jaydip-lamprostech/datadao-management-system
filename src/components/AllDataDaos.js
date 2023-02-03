@@ -27,82 +27,189 @@ function AllDataDaos({ setSingleDataDao, setDatadaos }) {
                     <Grid item xs={4}>
                       {" "}
                       <div className="proposal-details">
-                        <h1>dataDAo Name</h1>
-                        <p>
-                          "Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit, sed do eiusmod tempor incididunt ut labore et
-                          dolore magna aliqua. Ut enim ad minim veniam, quis
-                          nostrud exercitation ullamco laboris nisi ut aliquip
-                          ex ea commodo consequat.
-                        </p>
-                        <h3 className="datadao-address">0X2b5603....d0f</h3>
-
-                        <div className="uploadfile">
-                          <Button
-                            variant="contained"
-                            size="large"
-                            onClick={() => {
-                              setSingleDataDao(true);
-                              setDatadaos(false);
-                            }}
-                          >
-                            More...
-                          </Button>
-                        </div>
+                        <table>
+                          <thead>
+                            <tr>
+                              <th colSpan={2}>DataDAo Name</th>
+                            </tr>
+                          </thead>
+                          <tr>
+                            <td>
+                              {" "}
+                              <p>
+                                "Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua. Ut
+                                enim ad minim veniam, quis nostrud exercitation
+                                ullamco laboris nisi ut aliquip ex ea commodo
+                                consequat.
+                              </p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              {" "}
+                              <h3 className="datadao-address">
+                                0X2b5603....d0f
+                              </h3>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <Button
+                                variant="contained"
+                                size="large"
+                                onClick={() => {
+                                  setSingleDataDao(true);
+                                  setDatadaos(false);
+                                }}
+                              >
+                                More...
+                              </Button>
+                            </td>
+                          </tr>
+                        </table>
                       </div>
                     </Grid>
                     <Grid item xs={4}>
                       {" "}
                       <div className="proposal-details">
-                        <h1>dataDAo Name</h1>
-                        <p>
-                          "Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit, sed do eiusmod tempor incididunt ut labore et
-                          dolore magna aliqua. Ut enim ad minim veniam, quis
-                          nostrud exercitation ullamco laboris nisi ut aliquip
-                          ex ea commodo consequat.
-                        </p>
-                        <h3 className="datadao-address">0X2b5603....d0f</h3>
-
-                        <div className="uploadfile">
-                          <Button
-                            variant="contained"
-                            size="large"
-                            onClick={() => {
-                              setDatadaos(false);
-                              setSingleDataDao(true);
-                            }}
-                          >
-                            More...
-                          </Button>
-                        </div>
+                        <table>
+                          <thead>
+                            <tr>
+                              <th colSpan={2}>DataDAo Name</th>
+                            </tr>
+                          </thead>
+                          <tr>
+                            <td>
+                              {" "}
+                              <p>
+                                "Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua. Ut
+                                enim ad minim veniam, quis nostrud exercitation
+                                ullamco laboris nisi ut aliquip ex ea commodo
+                                consequat.
+                              </p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              {" "}
+                              <h3 className="datadao-address">
+                                0X2b5603....d0f
+                              </h3>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <Button
+                                variant="contained"
+                                size="large"
+                                onClick={() => {
+                                  setSingleDataDao(true);
+                                  setDatadaos(false);
+                                }}
+                              >
+                                More...
+                              </Button>
+                            </td>
+                          </tr>
+                        </table>
                       </div>
                     </Grid>
                     <Grid item xs={4}>
                       {" "}
                       <div className="proposal-details">
-                        <h1>dataDAo Name</h1>
-                        <p>
-                          "Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit, sed do eiusmod tempor incididunt ut labore et
-                          dolore magna aliqua. Ut enim ad minim veniam, quis
-                          nostrud exercitation ullamco laboris nisi ut aliquip
-                          ex ea commodo consequat.
-                        </p>
-                        <h3 className="datadao-address">0X2b5603....d0f</h3>
-
-                        <div className="uploadfile">
-                          <Button
-                            variant="contained"
-                            size="large"
-                            onClick={() => {
-                              setDatadaos(false);
-                              setSingleDataDao(true);
-                            }}
-                          >
-                            More...
-                          </Button>
-                        </div>
+                        <table>
+                          <thead>
+                            <tr>
+                              <th colSpan={2}>DataDAo Name</th>
+                            </tr>
+                          </thead>
+                          <tr>
+                            <td>
+                              {" "}
+                              <p>
+                                "Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua. Ut
+                                enim ad minim veniam, quis nostrud exercitation
+                                ullamco laboris nisi ut aliquip ex ea commodo
+                                consequat.
+                              </p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              {" "}
+                              <h3 className="datadao-address">
+                                0X2b5603....d0f
+                              </h3>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <Button
+                                variant="contained"
+                                size="large"
+                                onClick={() => {
+                                  setSingleDataDao(true);
+                                  setDatadaos(false);
+                                }}
+                              >
+                                More...
+                              </Button>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                    </Grid>
+                    <Grid item xs={4}>
+                      {" "}
+                      <div className="proposal-details">
+                        <table>
+                          <thead>
+                            <tr>
+                              <th colSpan={2}>DataDAo Name</th>
+                            </tr>
+                          </thead>
+                          <tr>
+                            <td>
+                              {" "}
+                              <p>
+                                "Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua. Ut
+                                enim ad minim veniam, quis nostrud exercitation
+                                ullamco laboris nisi ut aliquip ex ea commodo
+                                consequat.
+                              </p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              {" "}
+                              <h3 className="datadao-address">
+                                0X2b5603....d0f
+                              </h3>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <Button
+                                variant="contained"
+                                size="large"
+                                onClick={() => {
+                                  setSingleDataDao(true);
+                                  setDatadaos(false);
+                                }}
+                              >
+                                More...
+                              </Button>
+                            </td>
+                          </tr>
+                        </table>
                       </div>
                     </Grid>
                   </React.Fragment>

@@ -1,22 +1,25 @@
 .all-datadao-main-div {
   width: 100%;
+  margin: 20px auto;
+  max-width: 1240px;
 }
 .all-datadao-div {
   margin: 0 auto;
 }
 .all-datadao-title {
   text-align: center;
-}
-.all-datadao-section1 {
-  margin-bottom: 50px;
-}
-.datadao-address {
-  background-color: aqua;
-  width: 150px;
   padding: 10px;
 }
+.all-datadao-section1 {
+  padding: 10px;
+}
+.datadao-address {
+  /* background-color: aqua; */
+  width: 150px;
+  /* padding: 10px; */
+}
 .all-datadao-section2 {
-  width: 60%;
+  /* width: 60%; */
   margin: 0 auto;
 }
 .dataDAo-details {

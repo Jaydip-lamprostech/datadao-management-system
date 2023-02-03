@@ -1,14 +1,17 @@
 .availabel-proposal-main-div {
   width: 100%;
+  width: 100%;
+  max-width: 1240px;
+  margin: 20px auto;
   /* background-color: bisque; */
 }
 .availabel-proposal-section1 {
   display: flex;
   justify-content: space-between;
-  margin: 20px;
+  margin: 0 auto;
+  padding: 20px 0px;
 }
 .availabel-proposal {
-  width: 50%;
   margin: 0 auto;
 }
 .A-proposal-title {
@@ -17,20 +20,31 @@
   margin-top: 10px;
   margin-bottom: 10px;
 }
+.A-proposal-title2 {
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
 .availabel-proposal-section2 {
   border: 1px solid gray;
   display: flex;
+  padding: 10px 0px;
   justify-content: space-around;
   align-items: center;
 }
-.proposal-details {
-  border: 1px solid gray;
-  padding: 20px;
-}
+
 .availabel-proposal-section3 {
   width: 100%;
   display: grid;
+  margin-top: 20px;
 }
 .proposal-grid-title {
   margin: 0;
 }
+#dropdown-formcontrol {
+  min-width: 120px;
+}
+/* .css-14lo706 > span {
+  padding-left: 30px !important;
+  width: 50% !important;
+  content: "" !important;
+} */

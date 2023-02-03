@@ -34,9 +34,10 @@
 }
 #demo-helper-text-misaligned-no-helper {
   padding: 15px;
+  width: 90%;
 }
 .addtoken-btn {
-  padding-left: 20px;
+  padding-left: 10px;
 }
 .add-token-cancel {
   display: flex;

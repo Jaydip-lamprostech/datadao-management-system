@@ -7,21 +7,20 @@ function CreateProposal() {
   return (
     <>
       <div className="create-proposal-main-div">
+        <h1 className="create-proposal-title">New Proposal</h1>
+        <p className="create-proposal-desc">
+          Enter the details of a new proposal and submit them.
+        </p>
+
         <div className="create-proposal-div">
           <div>
-            <h1 className="create-proposal-title">New Proposal</h1>
-            <p className="create-proposal-desc">
-              Enter the details of a new proposal and submit them.
-            </p>
-          </div>
-          <div>
             <label className="create-proposal-label">Title</label>
-            <p>Identify your proposal</p>
-            <TextField id="demo-helper-text-misaligned-no-helper" />{" "}
+            {/* <p>Identify your proposal</p> */}
+            <input type="text" placeholder="Enter Proposal Title" />
           </div>
           <div>
             <label className="create-proposal-label">Description</label>
-            <p>An introduction of about 2-3 lines</p>
+            {/* <p>An introduction of about 2-3 lines</p> */}
             <TextField id="demo-helper-text-misaligned-no-helper" />{" "}
           </div>
           <div className="proposal-margin-div">

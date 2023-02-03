@@ -126,3 +126,9 @@ td {
   text-align: end;
   padding: 20px 0px;
 }
+.addtoken {
+  margin: 10px;
+}
+#add-member-btn {
+  margin: 10px;
+}

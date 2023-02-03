@@ -1,15 +1,19 @@
 .create-proposal-main-div {
   width: 100%;
+  max-width: 1240px;
+  margin: 10px auto;
   /* background-color: bisque; */
 }
 .create-proposal-div {
-  width: 80%;
+  width: 50%;
   /* text-align: center; */
   margin: 0 auto;
+  margin-top: 20px;
 }
 .create-proposal-title {
   font-size: 2rem;
   text-align: center;
+  padding: 10px;
 }
 .create-proposal-desc {
   font-size: 1.1rem;
@@ -18,16 +22,42 @@
 }
 .create-proposal-label {
   font-size: 1.5rem;
+  padding-bottom: 10px;
 }
 .uploadfile {
   margin-top: 10px;
 }
 .proposal-date {
-  padding: 5px;
+  padding: 10px;
+  border-color: rgba(0, 0, 0, 0.23);
+  border-radius: 5px;
+  border-width: 1px;
+  text-align: center;
 }
 .proposal-date1 {
   margin-left: 10px;
 }
 .proposal-margin-div {
   margin-top: 20px;
+}
+.desc-height {
+  width: 90%;
+  height: 10vh;
+}
+.textfields-width {
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+.create-proposal-uploadfile {
+  width: 80px;
+  margin-left: 150px;
+}
+.create-proposal-btn {
+  width: 90%;
+}
+.date-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 40%;
 }
