@@ -42,7 +42,7 @@ function Navbar() {
       position="static"
       sx={{ backgroundColor: "#000000", padding: "10px 0px" }}
     >
-      <Container maxWidth="full">
+      <Container maxWidth="100%">
         <Toolbar disableGutters>
           {/* <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} /> */}
           <Typography

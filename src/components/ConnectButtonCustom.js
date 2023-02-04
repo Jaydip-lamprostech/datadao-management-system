@@ -1,6 +1,7 @@
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import "../styles/ConnectButtonCustom.scss";
 import React from "react";
+import filecoin from "../assets/Filecoin.png";
 
 function ConnectButtonCustom() {
   return (
@@ -54,7 +55,17 @@ function ConnectButtonCustom() {
                     type="button"
                     className="wrong-network"
                   >
-                    Wrong network
+                    Wrong network{" "}
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      height="24px"
+                      viewBox="0 0 24 24"
+                      width="24px"
+                      fill="#FFFFFF"
+                    >
+                      <path d="M24 24H0V0h24v24z" fill="none" opacity=".87" />
+                      <path d="M15.88 9.29L12 13.17 8.12 9.29c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41l4.59 4.59c.39.39 1.02.39 1.41 0l4.59-4.59c.39-.39.39-1.02 0-1.41-.39-.38-1.03-.39-1.42 0z" />
+                    </svg>
                   </button>
                 );
               }
@@ -67,32 +78,28 @@ function ConnectButtonCustom() {
                     type="button"
                     className="chain-button"
                   >
-                    {chain.hasIcon && (
-                      <div
-                        style={{
-                          // background: chain.iconBackground,
-                          width: "20px",
-                          borderRadius: 999,
-                          overflow: "hidden",
-                          marginRight: 8,
-                        }}
-                      >
-                        {chain.iconUrl && (
-                          <img
-                            alt={chain.name ?? "Chain icon"}
-                            src={chain.iconUrl}
-                            style={{ width: "20px", height: "20px" }}
-                          />
-                        )}
-                      </div>
-                    )}
+                    <div
+                      style={{
+                        // background: chain.iconBackground,
+                        width: "20px",
+                        borderRadius: 999,
+                        overflow: "hidden",
+                        marginRight: 8,
+                      }}
+                    >
+                      <img
+                        alt={chain.name ?? "Chain icon"}
+                        src={filecoin}
+                        style={{ width: "20px", height: "20px" }}
+                      />
+                    </div>
                     {chain.name}{" "}
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       height="24px"
                       viewBox="0 0 24 24"
                       width="24px"
-                      fill="#FFFFFF"
+                      fill="#0914d9"
                     >
                       <path d="M24 24H0V0h24v24z" fill="none" opacity=".87" />
                       <path d="M15.88 9.29L12 13.17 8.12 9.29c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41l4.59 4.59c.39.39 1.02.39 1.41 0l4.59-4.59c.39-.39.39-1.02 0-1.41-.39-.38-1.03-.39-1.42 0z" />

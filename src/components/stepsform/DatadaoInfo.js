@@ -14,6 +14,7 @@ function DatadaoInfo({
           <input
             type="text"
             placeholder="Enter name of the DataDao"
+            className="dark-background"
             onChange={(e) =>
               setDataDaoDetails({ ...dataDaoDetails, name: e.target.value })
             }
@@ -23,8 +24,9 @@ function DatadaoInfo({
           <textarea
             type="text"
             placeholder="Enter Datadao description"
-            rows="10"
+            rows="6"
             cols="50"
+            className="dark-background"
             onChange={(e) =>
               setDataDaoDetails({
                 ...dataDaoDetails,

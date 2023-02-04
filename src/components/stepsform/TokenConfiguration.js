@@ -63,6 +63,24 @@ function TokenConfiguration({
           />
         </div>
       </div>
+      <div className="create-dao-token-config-parent">
+        <div className="token-config-child-1">
+          <h3 className="token-title">Supply to Contract</h3>
+          <input
+            type="number"
+            placeholder="Total tokens supply to contract "
+            onChange={(e) => setTokenHolders(e.target.value)}
+          />
+        </div>
+        <div className="token-config-child-2">
+          <h3 className="token-title">Price</h3>
+          <input
+            type="text"
+            placeholder="price"
+            onChange={(e) => setTokenHolderBalance(e.target.value)}
+          />
+        </div>
+      </div>
 
       <div className="create-dao-back-next-parent">
         <button className="create-dao-back" onClick={handleBack}>

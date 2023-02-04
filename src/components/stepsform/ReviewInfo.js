@@ -24,7 +24,7 @@ function ReviewInfo({
         <Accordion
           expanded={expanded === "panel1"}
           onChange={handleChange("panel1")}
-          sx={{ borderRadius: "10px", background: "#e0e0e0" }}
+          sx={{ borderRadius: "10px", background: "#fefcfc" }}
         >
           <AccordionSummary
             expandIcon={<ExpandMoreIcon sx={{ color: "#ffffff" }} />}
@@ -72,7 +72,7 @@ function ReviewInfo({
         <Accordion
           expanded={expanded === "panel2"}
           onChange={handleChange("panel2")}
-          sx={{ borderRadius: "10px", background: "#e0e0e0" }}
+          sx={{ borderRadius: "10px", background: "#fefcfc" }}
         >
           <AccordionSummary
             expandIcon={<ExpandMoreIcon sx={{ color: "#ffffff" }} />}
@@ -123,6 +123,7 @@ function ReviewInfo({
             >
               Voting Period
             </Typography>
+
             <Typography
               sx={{
                 textAlign: "left",
@@ -131,14 +132,19 @@ function ReviewInfo({
                 margin: "10px 0px",
               }}
             >
-              {dataDaoDetails.vote_period} %
+              {dataDaoDetails.vote_period_day +
+                " day, " +
+                dataDaoDetails.vote_period_hour +
+                " hours, " +
+                dataDaoDetails.vote_period_minutes +
+                " minutes. "}
             </Typography>
           </AccordionDetails>
         </Accordion>
         <Accordion
           expanded={expanded === "panel3"}
           onChange={handleChange("panel3")}
-          sx={{ borderRadius: "10px", background: "#e0e0e0" }}
+          sx={{ borderRadius: "10px", background: "#fefcfc" }}
         >
           <AccordionSummary
             expandIcon={<ExpandMoreIcon sx={{ color: "#ffffff" }} />}

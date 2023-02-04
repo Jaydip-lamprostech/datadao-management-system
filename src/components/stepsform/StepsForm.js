@@ -32,13 +32,14 @@ export default function StepsForm({
   // const [activeStep, setActiveStep] = useState(0);
 
   return (
-    <Box sx={{ maxWidth: 400 }}>
+    <Box sx={{ maxWidth: "100%" }}>
       <Stepper activeStep={activeStep} orientation="vertical">
         {steps.map((step, index) => (
           <Step key={step.label}>
             <StepLabel
+              className="step-label"
               optional={
-                index === 2 ? (
+                index === 3 ? (
                   <Typography variant="caption">Last step</Typography>
                 ) : null
               }

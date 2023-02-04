@@ -7,7 +7,7 @@ import {
   darkTheme,
 } from "@rainbow-me/rainbowkit";
 import { configureChains, createClient, WagmiConfig } from "wagmi";
-import { mainnet, polygonMumbai, goerli } from "wagmi/chains";
+import { filecoin, filecoinHyperspace } from "wagmi/chains";
 import { alchemyProvider } from "wagmi/providers/alchemy";
 import { publicProvider } from "wagmi/providers/public";
 import LandingPage from "./pages/LandingPage";
@@ -20,7 +20,7 @@ import ExistingDaos from "./pages/ExistingDaos";
 
 function App() {
   const { chains, provider } = configureChains(
-    [mainnet, polygonMumbai, goerli],
+    [filecoinHyperspace, filecoin],
     [
       alchemyProvider({ apiKey: "O5NYvtwLMNG0LjAXPQEk0YJT2l3UxTAY" }),
       publicProvider(),

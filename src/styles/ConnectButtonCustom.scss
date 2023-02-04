@@ -9,10 +9,10 @@ button {
 button.connect-wallet {
   padding: 10px 20px;
   font-size: 1rem;
-  background-color: transparent;
+  background-color: #f14c2c;
   color: #ffffff;
-  border: 1px solid #ffffff;
-  font-weight: 500;
+  border: 1px solid #f14c2c;
+  font-weight: 700;
   border-radius: 10px;
   letter-spacing: 1.5px;
 
@@ -26,11 +26,11 @@ button.chain-button {
   margin: auto 10px;
   padding: 10px;
   font-size: 1rem;
-  background-color: #0914d9;
-  color: #ffffff;
+  background-color: #ffffff;
+  color: #0914d9;
   font-weight: 700;
   // border: 1px solid #f14c2c;
-  border: 1px solid #0914d9;
+  border: 1px solid #ffffff;
 
   border-radius: 10px;
   // letter-spacing: 1.5px;
@@ -43,9 +43,11 @@ button.address-balance {
   padding: 2px;
   padding-left: 10px;
   font-size: 1rem;
-  background-color: #0914d9;
-  color: #ffffff;
-  border: 1px solid #0914d9;
+  // background-color: #0914d9;
+  background-color: #ffffff;
+  color: #0914d9;
+  // border: 1px solid #0914d9;
+  border: 1px solid #ffffff;
   font-weight: 700;
   border-radius: 10px;
   // letter-spacing: 1.5px;
@@ -60,6 +62,7 @@ button.address-balance {
 span.account-balance {
   background-color: #3842f7;
   // padding: 5px;
+  color: #ffffff;
   margin-left: 10px;
   border-radius: 10px;
   padding: 8px 10px;
@@ -67,4 +70,15 @@ span.account-balance {
   justify-content: center;
   align-items: center;
   flex-direction: row;
+}
+button.wrong-network {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  border: 1px solid #f14c2c;
+  padding: 10px 20px;
+  background-color: #f14c2c;
+  color: #ffffff;
+  font-weight: 700;
 }

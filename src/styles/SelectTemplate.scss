@@ -2,7 +2,7 @@
   box-shadow: 0px 0px 10px 0px rgba(255, 255, 255, 0.3);
   min-height: 90vh;
   height: auto;
-  width: 100vw;
+  width: 100%;
   margin: 0 auto;
   padding-top: 50px;
   h1 {
@@ -49,28 +49,19 @@
 }
 
 .template-details-main {
-  width: 80%;
+  position: relative;
+  width: 90%;
+  max-width: 1240px;
   margin: 70px auto;
   overflow: hidden;
   height: max-content;
-
+  z-index: 10;
   // min-height: 90vh;
   display: flex;
   flex-direction: row;
   justify-content: center;
 
   .gradient-1 {
-    // content: "";
-    // position: absolute;
-    // top: 70%;
-    // left: -60%;
-    // height: 100%;
-    // width: 100%;
-    // z-index: -1;
-    // opacity: 0.5;
-    // background: #0913d96f;
-    // background: -webkit-radial-gradient(circle, #0914d96f 0%, #000000 100%);
-    // background: radial-gradient(circle, #0914d96f 0%, #000000 100%);
     position: absolute;
     bottom: -30rem;
     right: -35rem;
@@ -78,6 +69,7 @@
     height: 80rem;
     background: radial-gradient(#1e4dd89f, rgba(8, 19, 47, 0), transparent);
     opacity: 0.5;
+    z-index: 1;
   }
   .gradient-2 {
     position: absolute;
@@ -87,6 +79,7 @@
     height: 70rem;
     background: radial-gradient(#4c2ffd, rgba(8, 19, 47, 0), transparent);
     opacity: 0.15;
+    z-index: 1;
   }
   div.left-div {
     background-color: #000000;
@@ -132,6 +125,8 @@
       border-radius: 10px;
       width: 100%;
       padding: 20px 10px;
+      position: relative;
+      z-index: 100;
 
       // &:hover {
       //   background: #1976d2;

@@ -22,7 +22,9 @@ function CreateDao() {
     description: "",
     vote_condition: "",
     vote_minapproval: "",
-    vote_period: "",
+    vote_period_day: "",
+    vote_period_hour: "",
+    vote_period_minutes: "",
     token_name: "",
     token_symbol: "",
     token_holders: [],
@@ -78,6 +80,43 @@ function CreateDao() {
               value={progressbar}
               max={100}
               text={`${progressbar}%`}
+              styles={{
+                // Customize the root svg element
+                root: {},
+                // Customize the path, i.e. the "completed progress"
+                path: {
+                  // Path color
+                  stroke: `#1976d2`,
+                  // Whether to use rounded or flat corners on the ends - can use 'butt' or 'round'
+                  strokeLinecap: "butt",
+                  // Customize transition animation
+                  transition: "stroke-dashoffset 0.5s ease 0s",
+                  // Rotate the path
+                  transform: "rotate(0.25turn)",
+                  transformOrigin: "center center",
+                },
+                // Customize the circle behind the path, i.e. the "total progress"
+                trail: {
+                  // Trail color
+                  stroke: "rgb(21, 22, 25)",
+                  // Whether to use rounded or flat corners on the ends - can use 'butt' or 'round'
+                  strokeLinecap: "butt",
+                  // Rotate the trail
+                  transform: "rotate(0.25turn)",
+                  transformOrigin: "center center",
+                },
+                // Customize the text
+                text: {
+                  // Text color
+                  fill: "#1976d2",
+                  // Text size
+                  fontSize: "16px",
+                },
+                // Customize background - only used when the `background` prop is true
+                background: {
+                  fill: "rgb(21, 22, 25)",
+                },
+              }}
             />
           </div>
         </div>

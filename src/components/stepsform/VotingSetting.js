@@ -60,19 +60,37 @@ function VotingSetting({
         <h3 className="voting-slider-title">Voting Period %</h3>
         <div className="slider-parent">
           <input
-            className="display-vote-period"
+            className="display-vote-period dark-background"
             type="text"
             placeholder="Enter Days"
+            onChange={(e) => {
+              setDataDaoDetails({
+                ...dataDaoDetails,
+                vote_period_day: e.target.value,
+              });
+            }}
           ></input>
           <input
-            className="display-vote-period"
+            className="display-vote-period dark-background"
             type="text"
             placeholder="Enter Hours"
+            onChange={(e) => {
+              setDataDaoDetails({
+                ...dataDaoDetails,
+                vote_period_hour: e.target.value,
+              });
+            }}
           ></input>
           <input
-            className="display-vote-period"
+            className="display-vote-period dark-background"
             type="text"
             placeholder="Enter Minutes"
+            onChange={(e) => {
+              setDataDaoDetails({
+                ...dataDaoDetails,
+                vote_period_minutes: e.target.value,
+              });
+            }}
           ></input>
         </div>
       </div>
