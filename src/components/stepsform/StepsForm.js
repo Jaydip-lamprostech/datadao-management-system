@@ -33,7 +33,11 @@ export default function StepsForm({
 
   return (
     <Box sx={{ maxWidth: "100%" }}>
-      <Stepper activeStep={activeStep} orientation="vertical">
+      <Stepper
+        activeStep={activeStep}
+        orientation="vertical"
+        sx={{ width: "100%" }}
+      >
         {steps.map((step, index) => (
           <Step key={step.label}>
             <StepLabel

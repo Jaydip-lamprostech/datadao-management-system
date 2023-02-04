@@ -12,9 +12,10 @@
   .left-div {
     // border: 1px solid #f3f2f2;
     width: 30%;
+    margin-left: 20px;
     // min-height: 90vh;
     // max-height: 90vh;
-    padding: 40px 30px;
+    padding: 40px 0px;
     border-radius: 20px;
     // background: #fefcfc;
     background-color: rgb(21, 22, 25);
@@ -265,6 +266,11 @@
         button.create-dao-next {
           background-color: #1976d2;
           border: 1px solid #1976d2;
+          color: #ffffff;
+        }
+        button.launch-dao {
+          background-color: #f14c2c;
+          border: 1px solid #f14c2c;
           color: #ffffff;
         }
       }

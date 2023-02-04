@@ -163,6 +163,8 @@ function LandingPage() {
   return (
     <>
       <section className="hero">
+        <div className="gradient-3"></div>
+        <div className="gradient-4"></div>
         <img src={heroimg2} alt="hero" className="hero-image" />
         <div className="hero-img-overlay"></div>
         <h1>Welcome to the DataDao Management System</h1>

@@ -197,7 +197,7 @@ function ReviewInfo({
         <button className="create-dao-back" onClick={handleBack}>
           Back
         </button>
-        <button className="create-dao-next" onClick={handleNext}>
+        <button className="create-dao-next launch-dao" onClick={handleNext}>
           Launch DataDao
         </button>
       </div>

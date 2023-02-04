@@ -40,7 +40,12 @@ function Navbar() {
   return (
     <AppBar
       position="static"
-      sx={{ backgroundColor: "#000000", padding: "10px 0px" }}
+      sx={{
+        backgroundColor: "#000000",
+        padding: "10px 0px",
+        position: "relative",
+        zIndex: "50",
+      }}
     >
       <Container maxWidth="100%">
         <Toolbar disableGutters>

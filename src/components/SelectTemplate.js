@@ -47,6 +47,7 @@ function SelectTemplate() {
                 border: "1px solid #1d130D",
                 color: "#ffffff",
               }}
+              className="card-template"
               key={key}
             >
               <CardActionArea

@@ -32,8 +32,8 @@ function ExistingDaos() {
   ]);
   return (
     <div className="select-main">
-      <h1>Your DataDAOs</h1>
-      <p>Click on any datadao to open dashboard for that dao.</p>
+      <h1>Select Template</h1>
+      <p>Create your DataDao with pre configured template</p>
       <div className="templates-div">
         {data.map((item, key) => {
           return (
@@ -41,7 +41,13 @@ function ExistingDaos() {
               sx={{
                 width: "100%",
                 maxWidth: 400,
+                minHeight: 450,
+                maxHeight: 450,
+                backgroundColor: "#000000",
+                border: "1px solid #1d130D",
+                color: "#ffffff",
               }}
+              className="card-template"
               key={key}
             >
               <CardActionArea
@@ -74,11 +80,37 @@ function ExistingDaos() {
                     variant="body2"
                     color="text.secondary"
                     className="template-info"
+                    sx={{ color: "#ffffff" }}
                   >
                     {item.info}
                   </Typography>
                 </CardContent>
               </CardActionArea>
+              <CardActions
+                sx={{
+                  width: "max-content",
+                  margin: "0px auto",
+                  alignSelf: "flex-end",
+                  marginTop: "auto",
+                }}
+              >
+                <Button
+                  size="small"
+                  color="primary"
+                  className="card-show-more-btn"
+                  onClick={async () => {
+                    navigate("/create-data-dao/select-template/details", {
+                      state: {
+                        cover: item.cover,
+                        title: item.title,
+                        info: item.info,
+                      },
+                    });
+                  }}
+                >
+                  Show More
+                </Button>
+              </CardActions>
             </Card>
           );
         })}
