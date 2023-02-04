@@ -1,5 +1,7 @@
 .select-main {
+  box-shadow: 0px 0px 10px 0px rgba(255, 255, 255, 0.3);
   min-height: 90vh;
+  height: auto;
   width: 100vw;
   margin: 0 auto;
   padding-top: 50px;
@@ -25,11 +27,13 @@
     }
     button.card-show-more-btn {
       padding: 10px 20px;
-      background-color: #1976d2c7;
+      border-radius: 10px;
+      background-color: #f14c2c;
       color: #fff;
+      transition: all 0.2s linear;
 
       &:hover {
-        background-color: #1976d2;
+        transform: scale(1.05);
       }
     }
     p.template-info {
@@ -47,57 +51,113 @@
 .template-details-main {
   width: 80%;
   margin: 70px auto;
-  min-height: 90vh;
+  overflow: hidden;
+  height: max-content;
+
+  // min-height: 90vh;
   display: flex;
   flex-direction: row;
-
   justify-content: center;
 
+  .gradient-1 {
+    // content: "";
+    // position: absolute;
+    // top: 70%;
+    // left: -60%;
+    // height: 100%;
+    // width: 100%;
+    // z-index: -1;
+    // opacity: 0.5;
+    // background: #0913d96f;
+    // background: -webkit-radial-gradient(circle, #0914d96f 0%, #000000 100%);
+    // background: radial-gradient(circle, #0914d96f 0%, #000000 100%);
+    position: absolute;
+    bottom: -30rem;
+    right: -35rem;
+    width: 80rem;
+    height: 80rem;
+    background: radial-gradient(#1e4dd89f, rgba(8, 19, 47, 0), transparent);
+    opacity: 0.5;
+  }
+  .gradient-2 {
+    position: absolute;
+    top: 3%;
+    left: -40rem;
+    width: 70rem;
+    height: 70rem;
+    background: radial-gradient(#4c2ffd, rgba(8, 19, 47, 0), transparent);
+    opacity: 0.15;
+  }
   div.left-div {
+    background-color: #000000;
+    background-image: url("../assets/dark-dotted-2.png");
+    // background-position: 100% 200%;
+    // background-size: ;
+    background-repeat: repeat;
+    border: 1px solid #1d130d;
     width: 60%;
+    color: #ffffff;
     // border: 1px solid black;
     padding: 20px 30px;
+    margin-right: 20px;
+    border-radius: 10px;
     img {
       width: 140px;
       border-radius: 999999px;
     }
     h1 {
+      text-transform: uppercase;
+      color: #1976d2;
       font-size: 2rem;
       margin: 20px 0px;
     }
     h2 {
+      text-transform: uppercase;
+      color: #1976d2;
       margin: 20px 0px;
       font-size: 1.5rem;
     }
     p {
+      font-size: 1.05rem;
       margin: 20px 0px;
     }
     button.use-template {
       margin: 50px 0px;
       cursor: pointer;
-      background: #fff;
-      border: 1px solid #1976d2;
-      color: #1976d2;
+      background: #f14c2c;
+      border: 1px solid #f14c2c;
+      color: #ffffff;
       font-size: 1.2rem;
       font-weight: 700;
       border-radius: 10px;
       width: 100%;
       padding: 20px 10px;
 
-      &:hover {
-        background: #1976d2;
-        border: 1px solid #1976d2;
-        color: #fff;
-      }
+      // &:hover {
+      //   background: #1976d2;
+      //   border: 1px solid #1976d2;
+      //   color: #fff;
+      // }
     }
   }
   div.right-div {
     width: 40%;
-    padding: 50px 30px;
-    border-left: 1px solid #f3f4f6;
+    color: #ffffff;
+    border: 1px solid #1d130d;
+    background-color: #000000;
+    border-radius: 10px;
+    padding: 0px 0px;
     text-align: center;
+    background-image: url("../assets/dark-dotted-2.png");
+    // background-position: 100% 200%;
+    // background-size: ;
+    background-repeat: repeat;
+
     h2 {
-      color: #1976d2;
+      border-radius: 10px 10px 0px 0px;
+      padding: 10px 20px;
+      color: #ffffff;
+      background-color: #1976d2;
     }
   }
   .included-config {

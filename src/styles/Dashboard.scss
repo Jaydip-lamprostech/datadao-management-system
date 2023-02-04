@@ -28,7 +28,7 @@
         border-radius: 10px;
 
         &:hover {
-          background-color: #e0e0e0;
+          background-color: rgba(200, 200, 200, 0.2);
         }
 
         svg {
@@ -36,7 +36,7 @@
         }
       }
       li.active {
-        background-color: #1976d2;
+        background-color: #0914d9;
         color: #ffffff;
 
         svg {
@@ -47,6 +47,7 @@
   }
   .right-db {
     width: 100%;
+    padding: 0px 24px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;

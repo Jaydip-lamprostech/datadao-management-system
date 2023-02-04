@@ -7,6 +7,8 @@ function TemplateDetails() {
 
   return (
     <div className="template-details-main">
+      <div className="gradient-1"></div>
+      <div className="gradient-2"></div>
       <div className="left-div">
         <img
           className="datadao-cover"
