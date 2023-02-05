@@ -16,18 +16,18 @@ function SelectTemplate() {
   const [data, setData] = useState([
     {
       cover: img,
-      title: "Sample Template",
-      info: "Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica",
+      title: "Company",
+      info: "Use transferable tokens to represent ownership stake in your organization. Decisions are made based on stake-weighted voting.",
     },
     {
       cover: img,
-      title: "Template 2",
-      info: "Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica",
+      title: "Membership",
+      info: "Use a non-transferable token to represent membership. Decisions are made based on one-member-one-vote governance.",
     },
     {
       cover: img,
-      title: "Template 3",
-      info: "Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica",
+      title: "Reputation",
+      info: "Use non-transferable tokens to represent reputation. Decisions are made using reputation-weighted voting.",
     },
   ]);
   return (

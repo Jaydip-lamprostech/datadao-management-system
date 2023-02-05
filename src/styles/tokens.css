@@ -30,7 +30,7 @@ td.table-options {
 }
 td {
   border: 0;
-  padding: 10px;
+  padding: 10px 20px;
 }
 .token-main-section {
   width: 100%;
@@ -117,6 +117,7 @@ td {
   padding: 10px 0px;
   font-size: 0.865rem;
   margin: 0;
+  color: #ffffff;
 }
 #center {
   text-align: center;

@@ -184,6 +184,7 @@ function Dashboard() {
                         maxWidth: 400,
                       }}
                       key={key}
+                      className="card"
                     >
                       <CardActionArea
                         onClick={() => {

@@ -26,8 +26,8 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: #0914d9;
-  outline: 1px solid #0914d9;
+  background-color: #fefcfc;
+  outline: 1px solid #fefcfc;
 }
 
 .gradient-1 {
