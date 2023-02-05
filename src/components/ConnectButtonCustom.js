@@ -93,7 +93,8 @@ function ConnectButtonCustom() {
                         style={{ width: "20px", height: "20px" }}
                       />
                     </div>
-                    {chain.name}{" "}
+                    <span className="disable-mobile">{chain.name} </span>
+
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       height="24px"
@@ -111,7 +112,11 @@ function ConnectButtonCustom() {
                     type="button"
                     className="address-balance"
                   >
-                    {account.displayBalance ? ` ${account.displayBalance}` : ""}
+                    <span className="disable-mobile">
+                      {account.displayBalance
+                        ? ` ${account.displayBalance}`
+                        : ""}
+                    </span>
                     <span className="account-balance">
                       {account.displayName}{" "}
                       <svg

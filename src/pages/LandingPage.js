@@ -15,7 +15,7 @@ function LandingPage() {
     navigate("/open-existing-data-dao");
   };
 
-  /// lighthouse encrypted upload ****************************
+  /// lighthouse encrypted upload *************************************************************
 
   const encryptionSignature = async () => {
     const provider = new ethers.providers.Web3Provider(window.ethereum);
@@ -124,7 +124,7 @@ function LandingPage() {
     setFileURL(url);
   };
 
-  /// lighthouse file share to a particular address function code ***************************
+  /// lighthouse file share to a particular address function code **********************************************
 
   const shareFile = async () => {
     // file cid which we want to share with others

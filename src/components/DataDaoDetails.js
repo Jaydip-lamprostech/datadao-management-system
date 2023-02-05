@@ -10,18 +10,15 @@ function DataDaoDetails({ setDatadaos, setSingleDataDao }) {
           <div className="datadao-details-section1">
             <div className="button-flex">
               <h1 className="datadao-details-title padding-div">Name</h1>
-              <Button
-                variant="contained"
-                size="large"
+              <button
                 className="datadao-details-btn-close"
                 onClick={() => {
                   setDatadaos(true);
                   setSingleDataDao(false);
                 }}
               >
-                {" "}
-                Back
-              </Button>
+                Go Back
+              </button>
             </div>
             <p className="datadao-details-desc padding-div width-peragraph">
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -30,20 +27,30 @@ function DataDaoDetails({ setDatadaos, setSingleDataDao }) {
               nisi ut aliquip ex ea commodo consequat.
             </p>
             <div className="dao-details-flext">
-              <h3 className="dao-details-token-name padding-div">Token Name</h3>
-              <h3 className="dao-details-token-no padding-div">No of Tokens</h3>
+              <table className="dao-details-table">
+                <thead>
+                  <tr>
+                    <th>Token Name</th>
+                    <th>No of Tokens</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Something</td>
+                    <td>100</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
             <div className="datadao-details-button padding-div">
-              <Button variant="contained" size="large">
-                Buy Token
-              </Button>
+              <button className="datadao-details-btn-close">Buy Token</button>
             </div>
           </div>
 
           <div className="datadao-details-section2">
             <h1 className="datadao-details-dataset">Available Dataset</h1>
             <div className="dataset-main-flex">
-              <table>
+              <table className="dataset-main-table">
                 <thead>
                   <tr>
                     <div className="daodetails-proposal-name">
@@ -65,13 +72,9 @@ function DataDaoDetails({ setDatadaos, setSingleDataDao }) {
                     <td className="datadao-width-btn">
                       {" "}
                       <div className="datadao-details-button ">
-                        <Button
-                          variant="contained"
-                          size="large"
-                          className="datadao-details-btn"
-                        >
+                        <button className="datadao-details-extra-btn">
                           Update
-                        </Button>
+                        </button>
                       </div>
                     </td>
                   </tr>
@@ -82,13 +85,9 @@ function DataDaoDetails({ setDatadaos, setSingleDataDao }) {
                     </td>
                     <td>
                       <div className="datadao-details-button datadao-details-btn-padding">
-                        <Button
-                          variant="contained"
-                          size="large"
-                          className="datadao-details-btn "
-                        >
+                        <button className="datadao-details-extra-btn">
                           Put on Sell
-                        </Button>
+                        </button>
                       </div>
                     </td>
                   </tr>
@@ -98,13 +97,9 @@ function DataDaoDetails({ setDatadaos, setSingleDataDao }) {
                     </td>
                     <td>
                       <div className="datadao-details-button datadao-details-btn-padding">
-                        <Button
-                          variant="contained"
-                          size="large"
-                          className="datadao-details-btn"
-                        >
+                        <button className="datadao-details-extra-btn">
                           Request Dataset
-                        </Button>
+                        </button>
                       </div>
                     </td>
                   </tr>

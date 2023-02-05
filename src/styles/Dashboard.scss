@@ -38,10 +38,11 @@
         padding: 10px 30px;
         cursor: pointer;
         border-radius: 10px;
-        color: #ffffffa7;
+        color: #3d3d3d;
 
         &:hover {
           background-color: rgba(200, 200, 200, 0.1);
+          color: #ffffffa7;
         }
 
         svg {
@@ -50,7 +51,7 @@
         }
       }
       li.active {
-        background-color: #0914d9;
+        background-color: #4c2ffd;
         color: #ffffff;
 
         svg {

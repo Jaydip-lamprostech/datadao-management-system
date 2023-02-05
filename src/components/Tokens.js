@@ -40,100 +40,73 @@ function Tokens() {
     <>
       <div className="token-main-section">
         <div className="token-main-div">
-          <div className="rightbar-token-main">
+          <div className="token-header">
             <h1 className="token-name">Token</h1>
-            <table>
-              <thead>
-                <tr className="table-header">
-                  <th>Holder</th>
-                  <th id="center">Balance</th>
-                  <th id="center">Stake</th>
-                  <th className="table-options"></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>0X2b5603...347sd0f</td>
-
-                  <td id="center">100</td>
-                  <td id="center">100 %</td>
-                  <td className="table-options">
-                    <FormControl
-                      sx={{ m: 1, minWidth: 120, fontSize: "0.765rem" }}
-                    >
-                      <Select
-                        value={age}
-                        onChange={() => handleChange()}
-                        displayEmpty
-                        inputProps={{ "aria-label": "Without label" }}
-                      >
-                        <MenuItem value="">
-                          <em>None</em>
-                        </MenuItem>
-                        <MenuItem value={10}>Add Token</MenuItem>
-                        <MenuItem value={20}>Remove Token</MenuItem>
-                        <MenuItem value={30}>Add Custom Label</MenuItem>
-                      </Select>
-                    </FormControl>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div className="leftbar-token-main">
             <div className="add-token-btn">
-              <Button
-                variant="contained"
-                size="medium"
-                className="add-token"
-                onClick={handleOpen}
-              >
+              <button className="add-member" onClick={handleOpen}>
                 Add Member
-              </Button>
+              </button>
             </div>
-
-            <table>
-              <thead>
-                <tr>
-                  <th>Token Info</th>
-                  <th></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Token Supply</td>
-                  <td>100</td>
-                </tr>
-                <tr>
-                  <td>Transferable</td>
-                  <td>Yes</td>
-                </tr>
-                <tr>
-                  <td>Token</td>
-                  <td>JDP</td>
-                </tr>
-              </tbody>
-            </table>
-
-            <div className="token-leftbar-info">
-              <table>
+          </div>
+          <div className="token-sub-section">
+            <div className="leftbar-token-main">
+              <table className="token-sub-table">
                 <thead>
-                  <tr>
-                    <th colSpan={2}>Ownership Distribution</th>
+                  <tr className="table-header">
+                    <th>Holder</th>
+                    <th id="center">Balance</th>
+                    <th id="center">Stake</th>
+                    <th className="table-options"></th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td>0X2b5...sd0f (You)</td>
-                    <td>100 %</td>
+                    <td>0X2b5603...347sd0f</td>
+
+                    <td id="center">100</td>
+                    <td id="center">100 %</td>
+                    <td className="table-options">
+                      {/* <FormControl
+                        sx={{ m: 1, minWidth: 120, fontSize: "0.765rem" }}
+                      >
+                        <Select
+                          value={age}
+                          onChange={() => handleChange()}
+                          displayEmpty
+                          inputProps={{ "aria-label": "Without label" }}
+                        >
+                          <MenuItem value="">
+                            <em>None</em>
+                          </MenuItem>
+                          <MenuItem value={10}>Add Token</MenuItem>
+                          <MenuItem value={20}>Remove Token</MenuItem>
+                        </Select>
+                      </FormControl> */}
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div className="rightbar-token-main">
+              <table className="token-sub-table">
+                <thead>
+                  <tr>
+                    <th>Token Info</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Token Supply</td>
+                    <td>100</td>
                   </tr>
                   <tr>
-                    <td colSpan={2}>
-                      <Box sx={{ width: "100%" }}>
-                        <LinearProgress variant="determinate" value={100} />
-                      </Box>
-                    </td>
-                    {/* <td>Yes</td> */}
+                    <td>Transferable</td>
+                    <td>Yes</td>
+                  </tr>
+                  <tr>
+                    <td>Token</td>
+                    <td>JDP</td>
                   </tr>
                 </tbody>
               </table>
@@ -146,22 +119,23 @@ function Tokens() {
           aria-labelledby="modal-modal-title"
           aria-describedby="modal-modal-description"
         >
-          <Box sx={style}>
+          <Box sx={style} className="add-member-box">
             <div className="add-token-leftbar-token-main">
+              <h2 style={{ textAlign: "center" }}>Add Member</h2>
               <div className="addtoken-label">
                 <div className="addtoken-label1">
                   <label>Recipient Address</label>{" "}
                 </div>
                 <div className="add-member-popup">
-                  <TextField id="demo-helper-text-misaligned-no-helper" />
+                  <input type="text" placeholder="Add Member Public Address" />
                 </div>
                 <div className="addtoken-label1">
-                  <label>Add Number Of Members</label>
+                  <label>Add Balance</label>
                 </div>
-                <TextField id="demo-helper-text-misaligned-no-helper" />{" "}
+                <input type="text" placeholder="Add Token Balance for Member" />
               </div>
               <div className="addtoken-btn">
-                <Button
+                {/* <Button
                   variant="contained"
                   size="large"
                   className="addtoken"
@@ -179,7 +153,8 @@ function Tokens() {
                   }}
                 >
                   Cancel
-                </Button>
+                </Button> */}
+                <button className="add-member-btn-popup">Add Member</button>
               </div>
             </div>
           </Box>

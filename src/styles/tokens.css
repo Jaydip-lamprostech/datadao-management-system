@@ -48,21 +48,29 @@ td {
   display: flex;
   margin: 0;
   justify-content: space-between;
+  flex-direction: column;
+}
+
+.token-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 .token-name {
-  margin: 0 auto;
+  /* margin: 0 auto; */
   /* width: 50%; */
   /* padding: 20px; */
   /* text-align: center; */
   padding: 20px 0px;
 }
-.rightbar-token-main {
+.leftbar-token-main {
   width: 100%;
-  padding: 20px;
+  padding: 20px 20px 20px 0px;
 }
 
-.leftbar-token-main {
-  width: 30%;
+.rightbar-token-main {
+  width: 40%;
   padding: 20px;
   padding-left: 0px;
   text-align: justify;
@@ -132,4 +140,45 @@ td {
 }
 #add-member-btn {
   margin: 10px;
+}
+
+.token-sub-section {
+  display: flex;
+  justify-content: space-between;
+}
+
+table.token-sub-table {
+  border-radius: 20px;
+  /* // background: #fefcfc; */
+  background-color: rgb(21, 22, 25);
+  color: rgb(255, 255, 255);
+  transition: box-shadow 300ms cubic-bezier(0.55, 0, 0.1, 1) 0ms;
+  box-shadow: none;
+  border: 1px solid rgb(45, 45, 45);
+  background-image: linear-gradient(
+    rgba(255, 255, 255, 0.03) 0%,
+    rgba(255, 255, 255, 0.03) 100%
+  );
+}
+
+table.token-sub-table thead {
+  background-color: transparent;
+  border-bottom: 1px solid rgb(45, 45, 45);
+}
+table.token-sub-table thead th {
+  color: #1976d2;
+}
+
+div.add-member-box {
+  border-radius: 20px;
+  /* // background: #fefcfc; */
+  background-color: rgb(21, 22, 25);
+  color: rgb(255, 255, 255);
+  transition: box-shadow 300ms cubic-bezier(0.55, 0, 0.1, 1) 0ms;
+  box-shadow: none;
+  border: 1px solid rgb(45, 45, 45);
+  background-image: linear-gradient(
+    rgba(255, 255, 255, 0.03) 0%,
+    rgba(255, 255, 255, 0.03) 100%
+  );
 }

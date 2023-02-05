@@ -82,3 +82,32 @@ button.wrong-network {
   color: #ffffff;
   font-weight: 700;
 }
+
+@media only screen and (max-width: 1200px) {
+  button.connect-wallet {
+    padding: 10px 10px;
+    font-size: 0.865rem;
+    letter-spacing: normal;
+  }
+  button.chain-button {
+    padding: 10px 10px;
+    font-size: 0.865rem;
+    letter-spacing: normal;
+  }
+  span.disable-mobile {
+    display: none;
+  }
+  span.account-balance {
+    background-color: #ffffff;
+    color: #0914d9;
+    font-size: 0.865rem;
+    padding: 0;
+    svg {
+      fill: #0914d9;
+    }
+  }
+  button.address-balance {
+    content: "";
+    padding: 1px;
+  }
+}

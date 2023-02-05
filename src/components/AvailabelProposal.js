@@ -64,14 +64,9 @@ function AvailabelProposal() {
           <div className="availabel-proposal-section1">
             <div className="A-proposal-title">Proposals</div>
             <div className="create-proposal-parent">
-              <Button
-                className="create-proposal-btn"
-                variant="contained"
-                size="large"
-                onClick={handleOpen2}
-              >
-                Create proposal
-              </Button>
+              <button className="create-proposal-btn" onClick={handleOpen2}>
+                Create Proposal
+              </button>
             </div>
           </div>
           <div className="availabel-proposal-section2">
@@ -329,13 +324,9 @@ function AvailabelProposal() {
                     />
                   </div>
                   <div className="uploadfile textfields-width">
-                    <Button
-                      variant="contained"
-                      size="large"
-                      className="create-proposal-btn"
-                    >
+                    <button className="create-proposal-btn-popup">
                       Create Proposal
-                    </Button>
+                    </button>
                   </div>
                 </div>
               </div>
