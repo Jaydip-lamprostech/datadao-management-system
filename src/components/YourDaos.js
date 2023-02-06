@@ -11,11 +11,13 @@ import { ContractFactory, ethers } from "ethers";
 import dataDaoFactory from "../contracts/artifacts/dataDaoFactory.json";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useAccount, useSigner } from "wagmi";
 
 const dataDaoFactoryContract = "0x0caC8C986452628Ed38483bcEE0D1cF85816946D";
 
 function YourDaos({ setSingleYourDataDao, setYourDaos, setDaoAddress }) {
   const [allDataDaos, setDataDaos] = useState([]);
+  const { address, isConnected } = useAccount();
 
   const getContract = async () => {
     try {
@@ -48,7 +50,7 @@ function YourDaos({ setSingleYourDataDao, setYourDaos, setDaoAddress }) {
 
   const getAllDataDaos = async () => {
     const contract = await getContract();
-    const dataDaos = await contract.getAllDataDaos();
+    const dataDaos = await contract.getUserDataDaos(address);
     console.log(dataDaos);
     setDataDaos(dataDaos);
   };

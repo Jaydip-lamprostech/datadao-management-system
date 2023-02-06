@@ -59,19 +59,19 @@ function Dashboard() {
       cover: image1,
       title: "Proposals",
       link: "Proposals",
-      info: "Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica",
+      info: "Check all the Active Proposals and contribute to your Data Dao ! ",
     },
     {
       cover: image2,
       title: "YourDaos",
       link: "YourDaos",
-      info: "Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica",
+      info: "Check all the data daos that you have created and contribute in it to build your community !",
     },
     {
       cover: image3,
       title: "DataDAOs",
       link: "DataDAOs",
-      info: "Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica",
+      info: "Check all the data daos available in the platform and be part of one you like the most !",
     },
   ]);
 

@@ -185,14 +185,6 @@ function YourDataDaoDetails({
     console.log(response_);
   };
 
-  function convertToHex(str) {
-    var hex = "";
-    for (var i = 0; i < str.length; i++) {
-      hex += "" + str.charCodeAt(i).toString(16);
-    }
-    return hex;
-  }
-
   const createProposal = async () => {
     const provider = new ethers.providers.Web3Provider(ethereum);
     const signer = provider.getSigner();
@@ -208,12 +200,14 @@ function YourDataDaoDetails({
 
     // console.log(String2Hex(fileInfo.data.Hash));
     contract.createDataSetDealProposal(
-      123,
+      fileInfo.data.Hash,
       fileInfo.data.Size,
       diffTime / 1000,
       0,
-      proposalInfo.name,
-      proposalInfo.description
+      proposalInfo.Name,
+      proposalInfo.Description,{
+        "gasLimit":10000000
+      }
     );
   };
 
@@ -254,8 +248,8 @@ function YourDataDaoDetails({
                 </thead>
                 <tbody>
                   <tr>
-                    <td>Something</td>
-                    <td>100</td>
+                    <td>DMS</td>
+                    <td>100000</td>
                   </tr>
                 </tbody>
               </table>
@@ -280,7 +274,7 @@ function YourDataDaoDetails({
                 <thead>
                   <tr>
                     <div className="daodetails-proposal-name">
-                      <th colSpan={2}>Name of Proposal</th>
+                      <th colSpan={2}>MusicCaps</th>
                     </div>
                   </tr>
                 </thead>
@@ -288,11 +282,7 @@ function YourDataDaoDetails({
                   <tr>
                     <td>
                       <p className=" width-peragraph">
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing
-                        elit, sed do eiusmod tempor incididunt ut labore et
-                        dolore magna aliqua. Ut enim ad minim veniam, quis
-                        nostrud exercitation ullamco laboris nisi ut aliquip ex
-                        ea commodo consequat.
+                        "This dataset contains 5.5k high-quality music captions written by musicians."
                       </p>
                     </td>
                     <td className="datadao-width-btn">

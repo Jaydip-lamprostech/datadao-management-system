@@ -185,7 +185,7 @@ function LandingPage() {
           </button>
         </div>
       </section>
-      <div className="second-section">
+      {/* <div className="second-section">
         <h1>Upload file to encrypt</h1>
         <input onChange={(e) => deployEncrypted(e)} type="file" />
 
@@ -202,7 +202,7 @@ function LandingPage() {
 
         <h1> Share file to address</h1>
         <button onClick={() => shareFile()}>share file</button>
-      </div>
+      </div> */}
     </>
   );
 }

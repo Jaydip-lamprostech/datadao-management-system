@@ -144,60 +144,14 @@ function AvailabelProposal() {
                     <table>
                       <thead>
                         <tr>
-                          <th colSpan={2}>Proposal Name</th>
+                          <th colSpan={2}>MusicCaps</th>
                         </tr>
                       </thead>
                       <tbody>
                         <tr>
                           <td>
                             {" "}
-                            "Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore magna aliqua.
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <button className="uploadfile">
-                              {" "}
-                              View Uploaded file
-                            </button>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <div className="date-flex">
-                              <span>Start-Date</span>
-                              <span>End-Date</span>
-                            </div>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td className="vote-btns">
-                            <button className="up-vote-btn">Up Vote</button>
-                            <button className="down-vote-btn">Down Vote</button>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </Grid>
-                <Grid item xs={6}>
-                  {" "}
-                  <div className="proposal-details">
-                    <table>
-                      <thead>
-                        <tr>
-                          <th colSpan={2}>Proposal Name</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>
-                            {" "}
-                            "Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore magna aliqua.
+                            ""This dataset contains 5.5k high-quality music captions written by musicians"
                           </td>
                         </tr>
                         <tr>

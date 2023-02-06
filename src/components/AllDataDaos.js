@@ -28,7 +28,7 @@ function AllDataDaos({ setSingleDataDao, setDatadaos, setDaoAddress }) {
           const contract = new ethers.Contract(
             dataDaoFactoryContract,
             dataDaoFactory.abi,
-            signer
+            provider
           );
           console.log(contract);
           return contract;
