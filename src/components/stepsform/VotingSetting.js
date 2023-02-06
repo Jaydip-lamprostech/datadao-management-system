@@ -61,34 +61,34 @@ function VotingSetting({
         <div className="slider-parent">
           <input
             className="display-vote-period dark-background"
-            type="text"
+            type="number"
             placeholder="Enter Days"
             onChange={(e) => {
               setDataDaoDetails({
                 ...dataDaoDetails,
-                vote_period_day: e.target.value,
+                vote_period_day: parseInt(e.target.value),
               });
             }}
           ></input>
           <input
             className="display-vote-period dark-background"
-            type="text"
+            type="number"
             placeholder="Enter Hours"
             onChange={(e) => {
               setDataDaoDetails({
                 ...dataDaoDetails,
-                vote_period_hour: e.target.value,
+                vote_period_hour: parseInt(e.target.value),
               });
             }}
           ></input>
           <input
             className="display-vote-period dark-background"
-            type="text"
+            type="number"
             placeholder="Enter Minutes"
             onChange={(e) => {
               setDataDaoDetails({
                 ...dataDaoDetails,
-                vote_period_minutes: e.target.value,
+                vote_period_minutes: parseInt(e.target.value),
               });
             }}
           ></input>

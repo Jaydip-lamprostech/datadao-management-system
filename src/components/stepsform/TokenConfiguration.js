@@ -59,11 +59,11 @@ function TokenConfiguration({
           <h3 className="token-title">Balance</h3>
           <input
             type="text"
-            onChange={(e) => setTokenHolderBalance(e.target.value)}
+            onChange={(e) => setTokenHolderBalance(parseInt(e.target.value))}
           />
         </div>
       </div>
-      <div className="create-dao-token-config-parent">
+      {/* <div className="create-dao-token-config-parent">
         <div className="token-config-child-1">
           <h3 className="token-title">Supply to Contract</h3>
           <input
@@ -80,7 +80,7 @@ function TokenConfiguration({
             onChange={(e) => setTokenHolderBalance(e.target.value)}
           />
         </div>
-      </div>
+      </div> */}
 
       <div className="create-dao-back-next-parent">
         <button className="create-dao-back" onClick={handleBack}>

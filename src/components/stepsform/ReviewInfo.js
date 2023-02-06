@@ -4,12 +4,13 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import { ContractFactory, ethers } from 'ethers';
-import MembershipToken from '../../contracts/artifacts/DataDaoToken.json'
-import dataDaoInstace from '../../contracts/artifacts/dataDaoInstace.json'
-import dataDaoFactory from '../../contracts/artifacts/dataDaoFactory.json'
+import { ContractFactory, ethers } from "ethers";
+import MembershipToken from "../../contracts/artifacts/DataDaoToken.json";
+import dataDaoInstace from "../../contracts/artifacts/dataDaoInstace.json";
+import dataDaoFactory from "../../contracts/artifacts/dataDaoFactory.json";
+import { useAccount } from "wagmi";
 
-const dataDaoFactoryContract = "0x0caC8C986452628Ed38483bcEE0D1cF85816946D"
+const dataDaoFactoryContract = "0x0caC8C986452628Ed38483bcEE0D1cF85816946D";
 
 function ReviewInfo({
   handleNext,
@@ -17,8 +18,7 @@ function ReviewInfo({
   dataDaoDetails,
   setDataDaoDetails,
 }) {
-
-
+  const { address } = useAccount();
   const getContract = async () => {
     try {
       const { ethereum } = window;
@@ -31,51 +31,92 @@ function ReviewInfo({
         const { chainId } = await provider.getNetwork();
         console.log("switch case for this case is: " + chainId);
         if (chainId === 3141) {
-          const contract = new ethers.Contract(dataDaoFactoryContract, dataDaoFactory.data.abi, signer);
-          return contract
+          const contract = new ethers.Contract(
+            dataDaoFactoryContract,
+            dataDaoFactory.abi,
+            signer
+          );
+          return contract;
         } else {
-          alert("Please connect to the Mumbai Testnet Network!");
+          alert("Please connect to the Filecoin Hyperspace Network!");
         }
       }
     } catch (error) {
       console.log(error);
     }
-  }
+  };
 
-
-  const [expanded, setExpanded] = useState(false);
+  const [expanded, setExpanded] = useState("panel1");
 
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
   };
 
-  ///to Deploy a smart contract
-  const deployContract = async (contractAbi, contractByteCode, deployArgs) => {
-    const factory = new ContractFactory(contractAbi, contractByteCode);
-    const contract = await factory.deploy(deployArgs);
-    console.log(contract.address);
-    return contract.address;
-  }
+  // ///to Deploy a smart contract
+  // const deployContract = async (contractAbi, contractByteCode, deployArgs) => {
+  //   const factory = new ContractFactory(contractAbi, contractByteCode);
+  //   const contract = await factory.deploy(deployArgs);
+  //   console.log(contract.address);
+  //   return contract.address;
+  // };
 
-  const deployToken = async (deployArgs) => {
-    const address = deployContract(MembershipToken.data.abi, MembershipToken.data.contractByteCode, deployArgs)
-    return address;
-  }
+  // const deployToken = async (deployArgs) => {
+  //   const address = deployContract(
+  //     MembershipToken.abi,
+  //     MembershipToken.data.bytecode,
+  //     deployArgs
+  //   );
+  //   return address;
+  // };
 
-  const deployDataDao = async (deployArgs) => {
-    const address = deployContract(dataDaoInstace.data.abi, dataDaoInstace.data.contractByteCode, deployArgs)
-    return address;
-  }
+  // const deployDataDao = async (deployArgs) => {
+  //   const address = deployContract(
+  //     dataDaoInstace.abi,
+  //     dataDaoInstace.data.bytecode,
+  //     deployArgs
+  //   );
+  //   return address;
+  // };
 
-  const luanchDataDao = async() => {
+  const votingPeriodEpoch =
+    Math.floor(dataDaoDetails.vote_period_day) * 86400 +
+    Math.floor(dataDaoDetails.vote_period_hour) * 3600 +
+    Math.floor(dataDaoDetails.vote_period_minutes) * 60;
+
+  const luanchDataDao = async () => {
     const contract = await getContract();
-    const tokenAddress = await deployToken(["tokenName","TokenSymball",10000]); ///tokenName,TokenSymball, totalSupply
-    const dataDaoAddress = deployDataDao();//Admin address,token address, condition, minimumApproval, votinPeriod, tokenPrice
-    const tx = contract.createDataDao();//dataDaoAddress,name, description, token, tokenPrice, totalSupply
+    const tokecFactory = new ContractFactory(
+      MembershipToken.abi,
+      MembershipToken.data.bytecode
+    );
+    const tokenContract = await tokecFactory.deploy(
+      dataDaoDetails.token_name,
+      dataDaoDetails.token_symbol,
+      10000
+    );
 
-  }
+    const tokenAddress = tokenContract.address;
 
-  console.log(dataDaoDetails);
+    const daoFactory = new ContractFactory(
+      dataDaoInstace.abi,
+      dataDaoInstace.data.bytecode
+    );
+    const daoContract = await tokecFactory.deploy(
+      address,
+      tokenAddress,
+      dataDaoDetails.vote_condition,
+      dataDaoDetails.vote_minapproval,
+      votingPeriodEpoch,
+      0
+    );
+    const dataDaoAddress = daoContract.address;
+
+    const tx = contract.createDataDao(dataDaoAddress);
+    await tx.wait(); //dataDaoAddress,name, description, token, tokenPrice, totalSupply
+    console.log(tx);
+  };
+
+  // console.log(dataDaoDetails);
 
   return (
     <div className="create-dao-info-main">
@@ -257,7 +298,12 @@ function ReviewInfo({
         <button className="create-dao-back" onClick={handleBack}>
           Back
         </button>
-        <button className="create-dao-next launch-dao" onClick={handleNext}>
+        <button
+          className="create-dao-next launch-dao"
+          onClick={() => {
+            luanchDataDao();
+          }}
+        >
           Launch DataDao
         </button>
       </div>

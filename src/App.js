@@ -52,14 +52,11 @@ function App() {
                 element={<TemplateDetails />}
               />
               <Route path="/create-data-dao" element={<CreateDao />} />
-              <Route
-                path="/open-existing-data-dao"
-                element={<ExistingDaos />}
-              />
-              <Route
+              <Route path="/open-existing-data-dao" element={<Dashboard />} />
+              {/* <Route
                 path="/open-existing-data-dao/:id"
                 element={<Dashboard />}
-              />
+              /> */}
             </Routes>
           </Router>
         </div>
