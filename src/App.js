@@ -17,6 +17,7 @@ import TemplateDetails from "./components/TemplateDetails";
 import CreateDao from "./components/stepsform/CreateDao";
 import Dashboard from "./pages/Dashboard";
 import ExistingDaos from "./pages/ExistingDaos";
+import Meet from "./pages/Meet";
 
 function App() {
   const { chains, provider } = configureChains(
@@ -53,6 +54,7 @@ function App() {
               />
               <Route path="/create-data-dao" element={<CreateDao />} />
               <Route path="/open-existing-data-dao" element={<Dashboard />} />
+              <Route path="/open-existing-data-dao/meet" element={<Meet />} />
               {/* <Route
                 path="/open-existing-data-dao/:id"
                 element={<Dashboard />}
