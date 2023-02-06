@@ -10,6 +10,16 @@
 .padding-div {
   padding: 10px;
 }
+
+.datadao-details-button {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.datadao-details-button button {
+  margin: 0px 20px;
+  width: max-content;
+}
 .datadao-details-section1 {
   border-bottom: 1px solid black;
   padding: 20px;
@@ -86,8 +96,11 @@ table.dao-details-table thead {
 table.dao-details-table thead th {
   padding: 10px 20px;
   border-right: 1px solid rgb(45, 45, 45);
+  border-bottom: 1px solid rgb(45, 45, 45);
 }
-
+table.dao-details-table tbody td {
+  padding: 10px;
+}
 table.dao-details-table tbody td:first-of-type {
   border-right: 1px solid rgb(45, 45, 45);
 }
@@ -107,18 +120,30 @@ table.dataset-main-table {
 table.dataset-main-table thead {
   background-color: transparent;
   border-bottom: 1px solid rgb(45, 45, 45);
+  font-size: 1.2rem;
 }
 
 table.dataset-main-table thead th {
+  padding: 10px;
   color: #fefcfc;
 }
-
+table.dataset-main-table td {
+  padding: 10px;
+}
 button.datadao-details-extra-btn {
-  width: 100%;
+  width: max-content;
   border-radius: 5px;
   padding: 10px 20px;
   background-color: #4c2ffd;
   color: #fefcfc;
   font-weight: 700;
   border: 1px solid #4c2ffd;
+}
+
+div.Toastify__toast-icon svg {
+  fill: #4c2ffd;
+}
+
+div.Toastify__progress-bar--success {
+  background: #4c2ffd;
 }

@@ -7,6 +7,7 @@ import { Box, Modal } from "@mui/material";
 import uploadfile from "../assets/upload.png";
 import dataDaoInstace from "../contracts/artifacts/dataDaoInstace.json";
 import lighthouse from "@lighthouse-web3/sdk";
+import { useNavigate } from "react-router-dom";
 
 const dataDaoFactoryContract = "0x0caC8C986452628Ed38483bcEE0D1cF85816946D";
 
@@ -16,13 +17,12 @@ function YourDataDaoDetails({
   setSingleYourDataDao,
   setYourDaos,
   yourDaos,
+  daoAddress,
 }) {
-  const [daoAddress, setDataDaoAddress] = useState(
-    "0xEF44eB47c898BF5Df98f420eE2fFEcb8dD7c3649"
-  );
   const inputRef = useRef();
   const inputRefEnd = useRef();
   const fileInputRef = useRef();
+  const navigate = useNavigate();
   const [showCreateProposal, setCreateProposal] = useState(false);
   const handleOpen2 = () => setCreateProposal(true);
   const handleClose2 = () => setCreateProposal(false);
@@ -40,10 +40,10 @@ function YourDataDaoDetails({
 
   const [dataDaoInfo, setDataDaoInfo] = useState([]);
   const [proposalInfo, setProposalInfo] = useState({
-    Name:null,
-    Description:null,
-    startDate:null,
-    endDate:null
+    Name: null,
+    Description: null,
+    startDate: null,
+    endDate: null,
   });
   const [fileInfo, setFileInfo] = useState(null);
   const { ethereum } = window;
@@ -83,44 +83,42 @@ function YourDataDaoDetails({
     console.log(dataDao);
   };
 
+  /// lighthouse encrypted upload *************************************************************
 
-    /// lighthouse encrypted upload *************************************************************
-
-    const encryptionSignature = async () => {
-      const provider = new ethers.providers.Web3Provider(window.ethereum);
-      const signer = provider.getSigner();
-      const address = await signer.getAddress();
-      const messageRequested = (await lighthouse.getAuthMessage(address)).data
-        .message;
-      const signedMessage = await signer.signMessage(messageRequested);
-      return {
-        signedMessage: signedMessage,
-        publicKey: address,
-      };
+  const encryptionSignature = async () => {
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
+    const signer = provider.getSigner();
+    const address = await signer.getAddress();
+    const messageRequested = (await lighthouse.getAuthMessage(address)).data
+      .message;
+    const signedMessage = await signer.signMessage(messageRequested);
+    return {
+      signedMessage: signedMessage,
+      publicKey: address,
     };
-    const progressCallback = (progressData) => {
-      let percentageDone =
-        100 - (progressData?.total / progressData?.uploaded)?.toFixed(2);
-      console.log(percentageDone);
-    };
+  };
+  const progressCallback = (progressData) => {
+    let percentageDone =
+      100 - (progressData?.total / progressData?.uploaded)?.toFixed(2);
+    console.log(percentageDone);
+  };
 
-    const encryptionSignature_ = async() =>{
-      const provider = new ethers.providers.Web3Provider(window.ethereum);
-      const signer = provider.getSigner();
-      const address = await signer.getAddress();
-      const messageRequested = (await lighthouse.getAuthMessage(address)).data.message;
-      const signedMessage = await signer.signMessage(messageRequested);
-      return({
-        signedMessage: signedMessage,
-        publicKey: address
-      });
-    }
-  
-  
-  
-    /* Deploy file along with encryption */
-    const deployEncrypted = async (e) => {
-      /*
+  const encryptionSignature_ = async () => {
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
+    const signer = provider.getSigner();
+    const address = await signer.getAddress();
+    const messageRequested = (await lighthouse.getAuthMessage(address)).data
+      .message;
+    const signedMessage = await signer.signMessage(messageRequested);
+    return {
+      signedMessage: signedMessage,
+      publicKey: address,
+    };
+  };
+
+  /* Deploy file along with encryption */
+  const deployEncrypted = async (e) => {
+    /*
          uploadEncrypted(e, publicKey, accessToken, uploadProgressCallback)
          - e: js event
          - publicKey: wallets public key
@@ -128,18 +126,18 @@ function YourDataDaoDetails({
          - signedMessage: message signed by the owner of publicKey
          - uploadProgressCallback: function to get progress (optional)
       */
-      const sig = await encryptionSignature();
-      const response = await lighthouse.uploadEncrypted(
-        e,
-        sig.publicKey,
-        "710d524c-69dd-4666-93dc-54d7107d1172",
-        sig.signedMessage,
-        progressCallback
-      );
-      
-      setFileInfo(response);
-      console.log(response);
-      /*
+    const sig = await encryptionSignature();
+    const response = await lighthouse.uploadEncrypted(
+      e,
+      sig.publicKey,
+      "710d524c-69dd-4666-93dc-54d7107d1172",
+      sig.signedMessage,
+      progressCallback
+    );
+
+    setFileInfo(response);
+    console.log(response);
+    /*
         output:
           {
             Name: "c04b017b6b9d1c189e15e6559aeb3ca8.png",
@@ -149,23 +147,23 @@ function YourDataDaoDetails({
         Note: Hash in response is CID.
       */
 
-        // Conditions to add
+    // Conditions to add
     const conditions = [
       {
-    id: 1,
-    chain: "Hyperspace",
-    method: "balanceOf",
-    standardContractType: "ERC20",
-    contractAddress: dataDaoInfo.dataDAOTokenAddress,
-    returnValueTest: { comparator: ">=", value: "1" },
-    parameters: [sig.publicKey],
-}
+        id: 1,
+        chain: "Hyperspace",
+        method: "balanceOf",
+        standardContractType: "ERC20",
+        contractAddress: dataDaoInfo.dataDAOTokenAddress,
+        returnValueTest: { comparator: ">=", value: "1" },
+        parameters: [sig.publicKey],
+      },
     ];
 
     // Aggregator is what kind of operation to apply to access conditions
     // Suppose there are two conditions then you can apply ([1] and [2]), ([1] or [2]), !([1] and [2]).
     const aggregator = "([1])";
-    const {publicKey, signedMessage} = await encryptionSignature_();
+    const { publicKey, signedMessage } = await encryptionSignature_();
 
     /*
       accessCondition(publicKey, cid, signedMessage, conditions, aggregator)
@@ -185,19 +183,17 @@ function YourDataDaoDetails({
     );
 
     console.log(response_);
+  };
 
-    };
-  
-    function convertToHex(str) {
-      var hex = '';
-      for(var i=0;i<str.length;i++) {
-          hex += ''+str.charCodeAt(i).toString(16);
-      }
-      return hex;
-  }    
+  function convertToHex(str) {
+    var hex = "";
+    for (var i = 0; i < str.length; i++) {
+      hex += "" + str.charCodeAt(i).toString(16);
+    }
+    return hex;
+  }
 
-  const createProposal = async () =>{
-
+  const createProposal = async () => {
     const provider = new ethers.providers.Web3Provider(ethereum);
     const signer = provider.getSigner();
     const contract = new ethers.Contract(
@@ -209,15 +205,21 @@ function YourDataDaoDetails({
     const date2 = new Date(proposalInfo.endDate);
     const diffTime = Math.abs(date2 - date1);
     console.log(diffTime);
-    
+
     // console.log(String2Hex(fileInfo.data.Hash));
-    contract.createDataSetDealProposal(123,fileInfo.data.Size, diffTime/1000, 0, proposalInfo.name, proposalInfo.description)
-
-  }
-
+    contract.createDataSetDealProposal(
+      123,
+      fileInfo.data.Size,
+      diffTime / 1000,
+      0,
+      proposalInfo.name,
+      proposalInfo.description
+    );
+  };
 
   useEffect(() => {
     getDataDaos();
+    return setDataDaoInfo([]);
   }, []);
 
   return (
@@ -258,12 +260,16 @@ function YourDataDaoDetails({
                 </tbody>
               </table>
             </div>
-            <div className="datadao-details-button padding-div">
-              <button className="datadao-details-btn-close">Buy Token</button>
+            <div className="datadao-details-button">
               <button className="create-proposal-btn" onClick={handleOpen2}>
                 Create Proposal
               </button>
-              <button className="create-proposal-btn">Start Meet</button>
+              <button
+                className="create-proposal-btn"
+                onClick={() => navigate("/open-existing-data-dao/meet")}
+              >
+                Start Meet
+              </button>
             </div>
           </div>
 
@@ -291,7 +297,7 @@ function YourDataDaoDetails({
                     </td>
                     <td className="datadao-width-btn">
                       {" "}
-                      <div className="datadao-details-button ">
+                      <div className=" ">
                         <button className="datadao-details-extra-btn">
                           Update
                         </button>
@@ -304,7 +310,7 @@ function YourDataDaoDetails({
                       <h4 className=" width-peragraph">uploaded file</h4>
                     </td>
                     <td>
-                      <div className="datadao-details-button datadao-details-btn-padding">
+                      <div className=" datadao-details-btn-padding">
                         <button className="datadao-details-extra-btn">
                           Put on Sell
                         </button>
@@ -315,13 +321,7 @@ function YourDataDaoDetails({
                     <td>
                       <h4 className="width-peragraph">23/10/2022</h4>
                     </td>
-                    <td>
-                      <div className="datadao-details-button datadao-details-btn-padding">
-                        <button className="datadao-details-extra-btn">
-                          Request Dataset
-                        </button>
-                      </div>
-                    </td>
+                    <td></td>
                   </tr>
                 </div>
               </table>
@@ -345,15 +345,29 @@ function YourDataDaoDetails({
                 <div className="create-proposal-div">
                   <label className="create-proposal-label">Title</label>
                   <div className="textfields-width">
-                    <input type="text" onChange = {(e) => setProposalInfo({
-                      ...proposalInfo, Name: e.target.value
-                    }) }/>{" "}
+                    <input
+                      type="text"
+                      onChange={(e) =>
+                        setProposalInfo({
+                          ...proposalInfo,
+                          Name: e.target.value,
+                        })
+                      }
+                    />{" "}
                   </div>
                   <label className="create-proposal-label">Description</label>
                   <div className="textfields-width">
-                    <textarea rows="70" type="text" className="desc-height"  onChange = {(e) => setProposalInfo({
-                      ...proposalInfo, Description: e.target.value
-                    }) }/>
+                    <textarea
+                      rows="70"
+                      type="text"
+                      className="desc-height"
+                      onChange={(e) =>
+                        setProposalInfo({
+                          ...proposalInfo,
+                          Description: e.target.value,
+                        })
+                      }
+                    />
                   </div>{" "}
                   <label className="create-proposal-label">Upload File</label>
                   <div
@@ -365,8 +379,13 @@ function YourDataDaoDetails({
                         Upload File/Folder
                       </label>
                     </div> */}
-                    <img src={uploadfile} alt="upload"  />
-                    <input type="file" hidden ref={fileInputRef} onChange={(e)=> deployEncrypted(e)}/>
+                    <img src={uploadfile} alt="upload" />
+                    <input
+                      type="file"
+                      hidden
+                      ref={fileInputRef}
+                      onChange={(e) => deployEncrypted(e)}
+                    />
                   </div>
                   <label className="create-proposal-label">Proposal Date</label>
                   <div className="start-end-div">
@@ -375,9 +394,12 @@ function YourDataDaoDetails({
                       className="proposal-date"
                       placeholder="Start-Date"
                       ref={inputRef}
-                      onChange = {(e) => setProposalInfo({
-                        ...proposalInfo, startDate: e.target.value
-                      }) }
+                      onChange={(e) =>
+                        setProposalInfo({
+                          ...proposalInfo,
+                          startDate: e.target.value,
+                        })
+                      }
                       onFocus={() => (inputRef.current.type = "date")}
                       onBlur={() => (inputRef.current.type = "text")}
                     />
@@ -386,15 +408,21 @@ function YourDataDaoDetails({
                       className="proposal-date  proposal-date1"
                       placeholder="End-Date"
                       ref={inputRefEnd}
-                      onChange = {(e) => setProposalInfo({
-                        ...proposalInfo, endDate: e.target.value
-                      }) }
+                      onChange={(e) =>
+                        setProposalInfo({
+                          ...proposalInfo,
+                          endDate: e.target.value,
+                        })
+                      }
                       onFocus={() => (inputRefEnd.current.type = "date")}
                       onBlur={() => (inputRefEnd.current.type = "text")}
                     />
                   </div>
                   <div className="uploadfile textfields-width">
-                    <button className="create-proposal-btn-popup" onClick={()=> createProposal()}>
+                    <button
+                      className="create-proposal-btn-popup"
+                      onClick={() => createProposal()}
+                    >
                       Create Proposal
                     </button>
                   </div>

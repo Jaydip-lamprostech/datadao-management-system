@@ -9,7 +9,7 @@ import dataDaoFactory from "../contracts/artifacts/dataDaoFactory.json";
 
 const dataDaoFactoryContract = "0x0caC8C986452628Ed38483bcEE0D1cF85816946D";
 
-function AllDataDaos({ setSingleDataDao, setDatadaos }) {
+function AllDataDaos({ setSingleDataDao, setDatadaos, setDaoAddress }) {
   const [allDataDaos, setDataDaos] = useState([]);
 
   const getContract = async () => {
@@ -126,6 +126,7 @@ function AllDataDaos({ setSingleDataDao, setDatadaos }) {
                                     onClick={() => {
                                       setSingleDataDao(true);
                                       setDatadaos(false);
+                                      setDaoAddress(dao.dataDaoAddress);
                                     }}
                                   >
                                     View More

@@ -9,23 +9,26 @@ import { Button, CardActions } from "@mui/material";
 import img from "../assets/section3.jpg";
 import TemplateDetails from "./TemplateDetails";
 import { useNavigate } from "react-router-dom";
+import image1 from "../assets/image4.jpg";
+import image2 from "../assets/image5.jpg";
+import image3 from "../assets/image8.jpg";
 
 function SelectTemplate() {
   const navigate = useNavigate();
   const [showTemplateDetails, setTemplateDetails] = useState({});
   const [data, setData] = useState([
     {
-      cover: img,
+      cover: image1,
       title: "Company",
       info: "Use transferable tokens to represent ownership stake in your organization. Decisions are made based on stake-weighted voting.",
     },
     {
-      cover: img,
+      cover: image2,
       title: "Membership",
       info: "Use a non-transferable token to represent membership. Decisions are made based on one-member-one-vote governance.",
     },
     {
-      cover: img,
+      cover: image3,
       title: "Reputation",
       info: "Use non-transferable tokens to represent reputation. Decisions are made using reputation-weighted voting.",
     },
@@ -47,25 +50,32 @@ function SelectTemplate() {
                 border: "1px solid #1d130D",
                 color: "#ffffff",
               }}
-              className="card-template"
+              className={` ${
+                key === 0 ? "card-template" : "card-template disable"
+              }`}
               key={key}
             >
               <CardActionArea
-                onClick={async () => {
-                  navigate("/create-data-dao/select-template/details", {
-                    state: {
-                      cover: item.cover,
-                      title: item.title,
-                      info: item.info,
-                    },
-                  });
-                }}
+                onClick={
+                  key === 0
+                    ? () => {
+                        navigate("/create-data-dao/select-template/details", {
+                          state: {
+                            cover: item.cover,
+                            title: item.title,
+                            info: item.info,
+                          },
+                        });
+                      }
+                    : ""
+                }
               >
                 <CardMedia
                   component="img"
                   height="180"
                   image={item.cover}
                   alt="green iguana"
+                  className="cover-image-card"
                 />
                 <CardContent sx={{}}>
                   <Typography

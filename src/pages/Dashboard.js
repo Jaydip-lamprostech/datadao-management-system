@@ -15,12 +15,16 @@ import AvailabelProposal from "../components/AvailabelProposal";
 import AllDataDaos from "../components/AllDataDaos";
 import DataDaoDetails from "../components/DataDaoDetails";
 import YourDataDaoDetails from "../components/YourDataDaoDetails";
+import image1 from "../assets/image1.jpg";
+import image2 from "../assets/image2.jpg";
+import image3 from "../assets/image3.jpg";
 
 function Dashboard() {
   const [dashboard, setDashboard] = useState(true);
   const [proposals, setProposals] = useState(false);
   const [yourDaos, setYourDaos] = useState(false);
   const [datadaos, setDatadaos] = useState(false);
+  const [daoAddress, setDaoAddress] = useState();
 
   const [singleDataDao, setSingleDataDao] = useState(false);
   const [singleYourDataDao, setSingleYourDataDao] = useState(false);
@@ -52,19 +56,19 @@ function Dashboard() {
 
   const [data, setData] = useState([
     {
-      cover: img,
+      cover: image1,
       title: "Proposals",
       link: "Proposals",
       info: "Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica",
     },
     {
-      cover: img,
+      cover: image2,
       title: "YourDaos",
       link: "YourDaos",
       info: "Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica",
     },
     {
-      cover: img,
+      cover: image3,
       title: "DataDAOs",
       link: "DataDAOs",
       info: "Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica",
@@ -226,6 +230,7 @@ function Dashboard() {
           <YourDaos
             setSingleYourDataDao={setSingleYourDataDao}
             setYourDaos={setYourDaos}
+            setDaoAddress={setDaoAddress}
           />
         ) : proposals ? (
           <AvailabelProposal />
@@ -233,6 +238,7 @@ function Dashboard() {
           <AllDataDaos
             setSingleDataDao={setSingleDataDao}
             setDatadaos={setDatadaos}
+            setDaoAddress={setDaoAddress}
           />
         ) : singleDataDao ? (
           <DataDaoDetails
@@ -241,6 +247,7 @@ function Dashboard() {
             setSingleDataDao={setSingleDataDao}
             setYourDaos={setYourDaos}
             yourDaos={yourDaos}
+            daoAddress={daoAddress}
           />
         ) : singleYourDataDao ? (
           <YourDataDaoDetails
@@ -249,6 +256,7 @@ function Dashboard() {
             setSingleYourDataDao={setSingleYourDataDao}
             setYourDaos={setYourDaos}
             yourDaos={yourDaos}
+            daoAddress={daoAddress}
           />
         ) : null}
       </div>

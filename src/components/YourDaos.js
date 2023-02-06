@@ -9,10 +9,12 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import { ContractFactory, ethers } from "ethers";
 import dataDaoFactory from "../contracts/artifacts/dataDaoFactory.json";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const dataDaoFactoryContract = "0x0caC8C986452628Ed38483bcEE0D1cF85816946D";
 
-function YourDaos({ setSingleYourDataDao, setYourDaos }) {
+function YourDaos({ setSingleYourDataDao, setYourDaos, setDaoAddress }) {
   const [allDataDaos, setDataDaos] = useState([]);
 
   const getContract = async () => {
@@ -54,6 +56,18 @@ function YourDaos({ setSingleYourDataDao, setYourDaos }) {
   useEffect(() => {
     getAllDataDaos();
   }, []);
+
+  // copy to clipboard function ***************
+  const toastInfo = () => toast.success("Address Copied");
+  const copyContent = async (e) => {
+    try {
+      await navigator.clipboard.writeText(e);
+      toastInfo();
+      console.log("Content copied to clipboard");
+    } catch (err) {
+      console.error("Failed to copy: ", err);
+    }
+  };
 
   return (
     <>
@@ -106,7 +120,13 @@ function YourDaos({ setSingleYourDataDao, setYourDaos }) {
                                       viewBox="0 0 24 24"
                                       width="18px"
                                       fill="#4c2ffd"
-                                      style={{ margin: "0px 20px" }}
+                                      style={{
+                                        margin: "0px 20px",
+                                        cursor: "pointer",
+                                      }}
+                                      onClick={() =>
+                                        copyContent(dao.dataDaoAddress)
+                                      }
                                     >
                                       <g>
                                         <rect
@@ -129,6 +149,7 @@ function YourDaos({ setSingleYourDataDao, setYourDaos }) {
                                     onClick={() => {
                                       setSingleYourDataDao(true);
                                       setYourDaos(false);
+                                      setDaoAddress(dao.dataDaoAddress);
                                     }}
                                   >
                                     View More
@@ -148,6 +169,17 @@ function YourDaos({ setSingleYourDataDao, setYourDaos }) {
             </Box>
           </div>
         </div>
+        <ToastContainer
+          position="bottom-right"
+          autoClose={2000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+        />
       </div>
     </>
   );

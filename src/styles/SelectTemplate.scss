@@ -32,6 +32,13 @@
       );
       background-color: rgb(21, 22, 25);
     }
+    img.cover-image-card {
+      filter: contrast(90%);
+    }
+    .card-template.disable {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
     div {
       margin: 0 auto;
     }

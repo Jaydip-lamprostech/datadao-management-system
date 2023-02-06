@@ -173,8 +173,9 @@ function AvailabelProposal() {
                           </td>
                         </tr>
                         <tr>
-                          <td>
-                            <button className="vote-btn">VOTE</button>
+                          <td className="vote-btns">
+                            <button className="up-vote-btn">Up Vote</button>
+                            <button className="down-vote-btn">Down Vote</button>
                           </td>
                         </tr>
                       </tbody>
@@ -216,8 +217,9 @@ function AvailabelProposal() {
                           </td>
                         </tr>
                         <tr>
-                          <td>
-                            <button className="vote-btn">VOTE</button>
+                          <td className="vote-btns">
+                            <button className="up-vote-btn">Up Vote</button>
+                            <button className="down-vote-btn">Down Vote</button>
                           </td>
                         </tr>
                       </tbody>

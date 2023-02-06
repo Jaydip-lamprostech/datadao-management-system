@@ -9,18 +9,14 @@ import uploadfile from "../assets/upload.png";
 
 const dataDaoFactoryContract = "0x0caC8C986452628Ed38483bcEE0D1cF85816946D";
 
-
 function DataDaoDetails({
   datadaos,
   setDatadaos,
   setSingleDataDao,
   setYourDaos,
   yourDaos,
+  daoAddress,
 }) {
-  const [daoAddress, setDataDaoAddress] = useState(
-    "0xEF44eB47c898BF5Df98f420eE2fFEcb8dD7c3649"
-  );
-
   const inputRef = useRef();
   const inputRefEnd = useRef();
   const fileInputRef = useRef();
@@ -77,7 +73,6 @@ function DataDaoDetails({
     console.log(dataDao);
   };
 
-
   useEffect(() => {
     getDataDaos();
   }, []);
@@ -122,10 +117,6 @@ function DataDaoDetails({
             </div>
             <div className="datadao-details-button padding-div">
               <button className="datadao-details-btn-close">Buy Token</button>
-              <button className="create-proposal-btn" onClick={handleOpen2}>
-                Create Proposal
-              </button>
-              <button className="create-proposal-btn">Start Meet</button>
             </div>
           </div>
 
@@ -151,38 +142,23 @@ function DataDaoDetails({
                         ea commodo consequat.
                       </p>
                     </td>
-                    <td className="datadao-width-btn">
-                      {" "}
-                      <div className="datadao-details-button ">
-                        <button className="datadao-details-extra-btn">
-                          Update
-                        </button>
-                      </div>
-                    </td>
                   </tr>
                   <tr>
                     <td>
                       {" "}
                       <h4 className=" width-peragraph">uploaded file</h4>
                     </td>
-                    <td>
-                      <div className="datadao-details-button datadao-details-btn-padding">
-                        <button className="datadao-details-extra-btn">
-                          Put on Sell
-                        </button>
-                      </div>
-                    </td>
                   </tr>
                   <tr>
                     <td>
                       <h4 className="width-peragraph">23/10/2022</h4>
                     </td>
+                  </tr>
+                  <tr>
                     <td>
-                      <div className="datadao-details-button datadao-details-btn-padding">
-                        <button className="datadao-details-extra-btn">
-                          Request Dataset
-                        </button>
-                      </div>
+                      <button className="datadao-details-extra-btn">
+                        Request Dataset
+                      </button>
                     </td>
                   </tr>
                 </div>
