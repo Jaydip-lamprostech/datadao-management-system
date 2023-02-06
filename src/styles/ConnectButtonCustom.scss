@@ -24,14 +24,13 @@ button.connect-wallet {
 }
 button.chain-button {
   margin: auto 10px;
-  padding: 10px;
-  font-size: 1rem;
+  padding: 5px;
+  font-size: 0.865rem;
   background-color: #ffffff;
   color: #0914d9;
   font-weight: 700;
   // border: 1px solid #f14c2c;
   border: 1px solid #ffffff;
-
   border-radius: 10px;
   // letter-spacing: 1.5px;
 }
@@ -41,8 +40,8 @@ button.address-balance {
   justify-content: center;
   margin-left: 0px;
   padding: 2px;
-  padding-left: 10px;
-  font-size: 1rem;
+  padding-left: 5px;
+  font-size: 0.865rem;
   // background-color: #0914d9;
   background-color: #ffffff;
   color: #0914d9;
@@ -63,11 +62,11 @@ span.account-balance {
   background-color: #3842f7;
   // padding: 5px;
   color: #ffffff;
-  margin-left: 10px;
+  margin-left: 5px;
   border-radius: 10px;
-  padding: 8px 10px;
+  padding: 4px 5px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   flex-direction: row;
 }

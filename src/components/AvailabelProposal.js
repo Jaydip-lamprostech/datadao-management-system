@@ -14,48 +14,14 @@ import "../styles/createproposal.css";
 import uploadfile from "../assets/upload.png";
 
 function AvailabelProposal() {
-  const inputRef = useRef();
-  const inputRefEnd = useRef();
   const inputRef1 = useRef();
   const inputRef3 = useRef();
-  const fileInputRef = useRef();
-  const [age, setAge] = useState("");
-  const [showCreateProposal, setCreateProposal] = useState(false);
 
-  const handleOpen2 = () => setCreateProposal(true);
-  const handleClose2 = () => setCreateProposal(false);
+  const [age, setAge] = useState("");
 
   const handleChange = (event) => {
     setAge(event.target.value);
   };
-  const style = {
-    position: "absolute",
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
-    width: 900,
-
-    boxShadow: 24,
-    p: 4,
-  };
-
-  const [progress, setProgress] = React.useState(0);
-
-  React.useEffect(() => {
-    const timer = setInterval(() => {
-      setProgress((oldProgress) => {
-        if (oldProgress === 100) {
-          return 0;
-        }
-        const diff = Math.random() * 10;
-        return Math.min(oldProgress + diff, 100);
-      });
-    }, 500);
-
-    return () => {
-      clearInterval(timer);
-    };
-  }, []);
 
   return (
     <>
@@ -63,11 +29,7 @@ function AvailabelProposal() {
         <div className="availabel-proposal">
           <div className="availabel-proposal-section1">
             <div className="A-proposal-title">Proposals</div>
-            <div className="create-proposal-parent">
-              <button className="create-proposal-btn" onClick={handleOpen2}>
-                Create Proposal
-              </button>
-            </div>
+            <div className="create-proposal-parent"></div>
           </div>
           <div className="availabel-proposal-section2">
             <div>
@@ -266,73 +228,6 @@ function AvailabelProposal() {
             </Box>
           </div>
         </div>
-        <Modal
-          open={showCreateProposal}
-          onClose={handleClose2}
-          aria-labelledby="modal-modal-title"
-          aria-describedby="modal-modal-description"
-        >
-          <Box sx={style} className="create-proposal-parent-div">
-            <div className="create-proposal-main-div">
-              <div>
-                <h1 className="create-proposal-title">New Proposal</h1>
-                <p className="create-proposal-desc">
-                  Enter the details of a new proposal and submit them.
-                </p>
-
-                <div className="create-proposal-div">
-                  <label className="create-proposal-label">Title</label>
-                  <div className="textfields-width">
-                    <input type="text" />{" "}
-                  </div>
-                  <label className="create-proposal-label">Description</label>
-                  <div className="textfields-width">
-                    <textarea rows="70" type="text" className="desc-height" />
-                  </div>{" "}
-                  <label className="create-proposal-label">Upload File</label>
-                  <div
-                    className="proposal-margin-div"
-                    onClick={() => fileInputRef.current.click()}
-                  >
-                    {/* <div>
-                      <label className="create-proposal-label">
-                        Upload File/Folder
-                      </label>
-                    </div> */}
-                    <img src={uploadfile} alt="upload" />
-                    <input type="file" hidden ref={fileInputRef} />
-                  </div>
-                  <label className="create-proposal-label">Proposal Date</label>
-                  <div className="start-end-div">
-                    <input
-                      type="text"
-                      className="proposal-date"
-                      placeholder="Start-Date"
-                      ref={inputRef}
-                      onChange={(e) => console.log(e.target.value)}
-                      onFocus={() => (inputRef.current.type = "date")}
-                      onBlur={() => (inputRef.current.type = "text")}
-                    />
-                    <input
-                      type="text"
-                      className="proposal-date  proposal-date1"
-                      placeholder="End-Date"
-                      ref={inputRefEnd}
-                      onChange={(e) => console.log(e.target.value)}
-                      onFocus={() => (inputRefEnd.current.type = "date")}
-                      onBlur={() => (inputRefEnd.current.type = "text")}
-                    />
-                  </div>
-                  <div className="uploadfile textfields-width">
-                    <button className="create-proposal-btn-popup">
-                      Create Proposal
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </Box>
-        </Modal>
       </div>
     </>
   );

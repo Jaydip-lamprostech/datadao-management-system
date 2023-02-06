@@ -8,10 +8,10 @@ import uploadfile from "../assets/upload.png";
 
 const dataDaoFactoryContract = "0x0caC8C986452628Ed38483bcEE0D1cF85816946D";
 
-function DataDaoDetails({
+function YourDataDaoDetails({
   datadaos,
   setDatadaos,
-  setSingleDataDao,
+  setSingleYourDataDao,
   setYourDaos,
   yourDaos,
 }) {
@@ -90,8 +90,8 @@ function DataDaoDetails({
               <button
                 className="datadao-details-btn-close"
                 onClick={() => {
-                  setDatadaos(true);
-                  setSingleDataDao(false);
+                  setYourDaos(true);
+                  setSingleYourDataDao(false);
                 }}
               >
                 Go Back
@@ -257,4 +257,4 @@ function DataDaoDetails({
     </>
   );
 }
-export default DataDaoDetails;
+export default YourDataDaoDetails;

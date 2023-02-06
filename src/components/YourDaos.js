@@ -12,7 +12,7 @@ import dataDaoFactory from "../contracts/artifacts/dataDaoFactory.json";
 
 const dataDaoFactoryContract = "0x0caC8C986452628Ed38483bcEE0D1cF85816946D";
 
-function AllDataDaos({ setSingleDataDao, setDatadaos }) {
+function YourDaos({ setSingleYourDataDao, setYourDaos }) {
   const [allDataDaos, setDataDaos] = useState([]);
 
   const getContract = async () => {
@@ -60,7 +60,7 @@ function AllDataDaos({ setSingleDataDao, setDatadaos }) {
       <div className="all-datadao-main-div">
         <div className="all-datadao-div">
           <div className="all-datadao-section1">
-            <h1 className="all-datadao-title">All DataDAOs</h1>
+            <h1 className="all-datadao-title">Your DataDAOs</h1>
             <p className="all-datadao-title">
               All the dataDAOs on the platform
             </p>
@@ -127,8 +127,8 @@ function AllDataDaos({ setSingleDataDao, setDatadaos }) {
                                   <button
                                     className="view-more-all-dao"
                                     onClick={() => {
-                                      setSingleDataDao(true);
-                                      setDatadaos(false);
+                                      setSingleYourDataDao(true);
+                                      setYourDaos(false);
                                     }}
                                   >
                                     View More
@@ -152,5 +152,4 @@ function AllDataDaos({ setSingleDataDao, setDatadaos }) {
     </>
   );
 }
-
-export default AllDataDaos;
+export default YourDaos;

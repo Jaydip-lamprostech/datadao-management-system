@@ -10,41 +10,42 @@ import img from "../assets/section3.jpg";
 // import TemplateDetails from "./TemplateDetails";
 import { useNavigate } from "react-router-dom";
 import "../styles/Dashboard.scss";
-import Tokens from "../components/Tokens";
+import YourDaos from "../components/YourDaos";
 import AvailabelProposal from "../components/AvailabelProposal";
 import AllDataDaos from "../components/AllDataDaos";
 import DataDaoDetails from "../components/DataDaoDetails";
+import YourDataDaoDetails from "../components/YourDataDaoDetails";
 
 function Dashboard() {
   const [dashboard, setDashboard] = useState(true);
   const [proposals, setProposals] = useState(false);
-  const [tokens, setTokens] = useState(false);
+  const [yourDaos, setYourDaos] = useState(false);
   const [datadaos, setDatadaos] = useState(false);
-  const [singleDataDao, setSingleDataDao] = useState(false);
 
-  const navigate = useNavigate();
+  const [singleDataDao, setSingleDataDao] = useState(false);
+  const [singleYourDataDao, setSingleYourDataDao] = useState(false);
 
   const dashboardLinks = (a) => {
     if (a === "Dashboard") {
       setDashboard(true);
       setProposals(false);
-      setTokens(false);
+      setYourDaos(false);
       setDatadaos(false);
     }
     if (a === "Proposals") {
       setDashboard(false);
       setProposals(true);
-      setTokens(false);
+      setYourDaos(false);
       setDatadaos(false);
-    } else if (a === "Tokens") {
+    } else if (a === "YourDaos") {
       setDashboard(false);
       setProposals(false);
-      setTokens(true);
+      setYourDaos(true);
       setDatadaos(false);
     } else if (a === "DataDAOs") {
       setDashboard(false);
       setProposals(false);
-      setTokens(false);
+      setYourDaos(false);
       setDatadaos(true);
     }
   };
@@ -58,8 +59,8 @@ function Dashboard() {
     },
     {
       cover: img,
-      title: "Tokens",
-      link: "Tokens",
+      title: "YourDaos",
+      link: "YourDaos",
       info: "Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica",
     },
     {
@@ -131,9 +132,9 @@ function Dashboard() {
             Proposals
           </li>
           <li
-            className={tokens ? "active" : ""}
+            className={yourDaos ? "active" : ""}
             onClick={() => {
-              dashboardLinks("Tokens");
+              dashboardLinks("YourDaos");
             }}
           >
             <svg
@@ -147,7 +148,7 @@ function Dashboard() {
               <rect fill="none" height="24" width="24" y="0" />
               <path d="M12.97,2.54c-0.6-0.34-1.34-0.34-1.94,0l-7,3.89L9.1,9.24C9.83,8.48,10.86,8,12,8s2.17,0.48,2.9,1.24l5.07-2.82L12.97,2.54z M10,12c0-1.1,0.9-2,2-2s2,0.9,2,2s-0.9,2-2,2S10,13.1,10,12z M3,8.14l5.13,2.85C8.04,11.31,8,11.65,8,12c0,1.86,1.27,3.43,3,3.87 v5.57l-6.97-3.87C3.39,17.22,3,16.55,3,15.82V8.14z M13,21.44v-5.57c1.73-0.44,3-2.01,3-3.87c0-0.35-0.04-0.69-0.13-1.01L21,8.14 l0,7.68c0,0.73-0.39,1.4-1.03,1.75L13,21.44z" />
             </svg>
-            Tokens
+            YourDaos
           </li>
           <li
             className={datadaos ? "active" : ""}
@@ -221,8 +222,11 @@ function Dashboard() {
               </div>
             </div>
           </>
-        ) : tokens ? (
-          <Tokens />
+        ) : yourDaos ? (
+          <YourDaos
+            setSingleYourDataDao={setSingleYourDataDao}
+            setYourDaos={setYourDaos}
+          />
         ) : proposals ? (
           <AvailabelProposal />
         ) : datadaos ? (
@@ -232,8 +236,19 @@ function Dashboard() {
           />
         ) : singleDataDao ? (
           <DataDaoDetails
+            datadaos={datadaos}
             setDatadaos={setDatadaos}
             setSingleDataDao={setSingleDataDao}
+            setYourDaos={setYourDaos}
+            yourDaos={yourDaos}
+          />
+        ) : singleYourDataDao ? (
+          <YourDataDaoDetails
+            datadaos={datadaos}
+            setDatadaos={setDatadaos}
+            setSingleYourDataDao={setSingleYourDataDao}
+            setYourDaos={setYourDaos}
+            yourDaos={yourDaos}
           />
         ) : null}
       </div>
