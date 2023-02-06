@@ -2,11 +2,13 @@ import React, { useState, useEffect, useRef } from "react";
 import "../styles/daodetails.css";
 import Button from "@mui/material/Button";
 import dataDaoFactory from "../contracts/artifacts/dataDaoFactory.json";
+
 import { ContractFactory, ethers } from "ethers";
 import { Box, Modal } from "@mui/material";
 import uploadfile from "../assets/upload.png";
 
 const dataDaoFactoryContract = "0x0caC8C986452628Ed38483bcEE0D1cF85816946D";
+
 
 function DataDaoDetails({
   datadaos,
@@ -18,6 +20,7 @@ function DataDaoDetails({
   const [daoAddress, setDataDaoAddress] = useState(
     "0xEF44eB47c898BF5Df98f420eE2fFEcb8dD7c3649"
   );
+
   const inputRef = useRef();
   const inputRefEnd = useRef();
   const fileInputRef = useRef();
@@ -35,12 +38,12 @@ function DataDaoDetails({
     boxShadow: 24,
     p: 4,
   };
+  const { ethereum } = window;
 
   const [dataDaoInfo, setDataDaoInfo] = useState([]);
 
   const getContract = async () => {
     try {
-      const { ethereum } = window;
       console.log("in");
       if (ethereum) {
         const provider = new ethers.providers.Web3Provider(ethereum);
@@ -54,7 +57,7 @@ function DataDaoDetails({
           const contract = new ethers.Contract(
             dataDaoFactoryContract,
             dataDaoFactory.abi,
-            signer
+            provider
           );
           console.log(contract);
           return contract;
@@ -73,6 +76,7 @@ function DataDaoDetails({
     setDataDaoInfo(dataDao);
     console.log(dataDao);
   };
+
 
   useEffect(() => {
     getDataDaos();
