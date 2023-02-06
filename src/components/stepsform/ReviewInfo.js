@@ -70,8 +70,8 @@ function ReviewInfo({
   const luanchDataDao = async() => {
     const contract = await getContract();
     const tokenAddress = await deployToken(["tokenName","TokenSymball",10000]); ///tokenName,TokenSymball, totalSupply
-    const dataDaoAddress = deployDataDao();//Admin address,token address, condition, minimumApproval, votinPeriod, tokenPrice
-    const tx = contract.createDataDao();//dataDaoAddress,name, description, token, tokenPrice, totalSupply
+    const dataDaoAddress = deployDataDao();//Admin address,token address, condition, minimumApproval, votinPeriod, tokenPrice(int)
+    const tx = contract.createDataDao();//dataDaoAddress,name, description, token address, tokenPrice, totalSupply
 
   }
 
