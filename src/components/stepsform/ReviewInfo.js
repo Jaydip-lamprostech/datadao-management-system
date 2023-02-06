@@ -82,12 +82,17 @@ function ReviewInfo({
     Math.floor(dataDaoDetails.vote_period_day) * 86400 +
     Math.floor(dataDaoDetails.vote_period_hour) * 3600 +
     Math.floor(dataDaoDetails.vote_period_minutes) * 60;
+    const { ethereum } = window;
+
+    const provider = new ethers.providers.Web3Provider(ethereum);
+    const signer = provider.getSigner();
 
   const luanchDataDao = async () => {
     const contract = await getContract();
     const tokecFactory = new ContractFactory(
       MembershipToken.abi,
-      MembershipToken.data.bytecode
+      MembershipToken.data.bytecode,
+      signer
     );
     const tokenContract = await tokecFactory.deploy(
       dataDaoDetails.token_name,
@@ -97,11 +102,13 @@ function ReviewInfo({
 
     const tokenAddress = tokenContract.address;
 
+    console.log(tokenAddress);
     const daoFactory = new ContractFactory(
       dataDaoInstace.abi,
-      dataDaoInstace.data.bytecode
+      dataDaoInstace.data.bytecode,
+      signer
     );
-    const daoContract = await tokecFactory.deploy(
+    const daoContract = await daoFactory.deploy(
       address,
       tokenAddress,
       dataDaoDetails.vote_condition,
@@ -111,12 +118,12 @@ function ReviewInfo({
     );
     const dataDaoAddress = daoContract.address;
 
-    const tx = contract.createDataDao(dataDaoAddress);
-    await tx.wait(); //dataDaoAddress,name, description, token, tokenPrice, totalSupply
+    const tx = await contract.createDataDao(dataDaoAddress, dataDaoDetails.name, dataDaoDetails.description, tokenAddress,0, dataDaoDetails.token_holders[0].tokenHolderBalance);
+    // await tx.wait(); //dataDaoAddress,name, description, token, tokenPrice, totalSupply
     console.log(tx);
   };
 
-  // console.log(dataDaoDetails);
+  console.log(dataDaoDetails);
 
   return (
     <div className="create-dao-info-main">

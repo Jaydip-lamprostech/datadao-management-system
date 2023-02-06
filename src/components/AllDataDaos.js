@@ -129,7 +129,7 @@ function AllDataDaos({ setSingleDataDao, setDatadaos }) {
                         </table>
                       </div>
                     </Grid>
-              )):              <h3 className='artist-streams'>No Data Daos available</h3>
+              )):              <h3 className='artist-streams'>Loading .....</h3>
             }
                   </React.Fragment>
                 </Grid>
