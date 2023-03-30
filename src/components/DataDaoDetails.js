@@ -70,7 +70,7 @@ function DataDaoDetails({
     const contract = await getContract();
     const dataDao = await contract.allDataDaos(daoAddress);
     setDataDaoInfo(dataDao);
-    console.log(dataDao);
+    // console.log(dataDao);
   };
 
   useEffect(() => {
